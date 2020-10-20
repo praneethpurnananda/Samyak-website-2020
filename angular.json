@@ -24,9 +24,39 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "src/styles.css",
+              "src/assets/css/animate.css",
+              "src/assets/css/bootstrap.css",
+              "src/assets/css/color-switcher-design.css",
+              "src/assets/css/elegent-icon.css",
+              "src/assets/css/flaticon.css",
+              "src/assets/css/fontawesome-all.css",
+              "src/assets/css/jquery.fancybox.min.css",
+              "src/assets/css/owl.css",
+              "src/assets/css/responsive.css",
+              "src/assets/css/style.css",
+              "src/assets/css/swiper.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "src/assets/js/appear.js",
+              "src/assets/js/bootstrap.min.js",
+              "src/assets/js/color-settings.js",
+              "src/assets/js/jquery-ui.js",
+              "src/assets/js/jquery.countdown.js",
+              "src/assets/js/jquery.easing.min.js",
+              "src/assets/js/jquery.fancybox.js",
+              "src/assets/js/jquery.js",
+              "src/assets/js/map-script.js",
+              "src/assets/js/owl.js",
+              "src/assets/js/parallax.min.js",
+              "src/assets/js/popper.min.js",
+              "src/assets/js/script.js",
+              "src/assets/js/swiper.min.js",
+              "src/assets/js/validate.js",
+              "src/assets/js/wow.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -88,6 +118,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +150,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "samyak-website"
 }
