@@ -5,11 +5,12 @@ import { AppRoutingModule } from '../app-routing.module';
 import * as $ from "jquery";
 
 import { MainHomeComponent } from './main-home/main-home.component';
+import { AboutComponent } from './about/about.component';
 
 
 
 @NgModule({
-  declarations: [MainHomeComponent],
+  declarations: [MainHomeComponent, AboutComponent],
   imports: [
     CommonModule,
     BrowserModule,
