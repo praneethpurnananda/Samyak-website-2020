@@ -22,7 +22,11 @@ export class ForgotPasswordComponent implements OnInit {
   }
 
   submit(){
-
+    this._service.forgotpassword(this.forgotPasswordForm.value)
+    .subscribe(
+      data => console.log(data),
+      error => console.log(error)
+    )
   }
 
   ngOnInit(): void {

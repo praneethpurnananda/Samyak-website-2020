@@ -23,4 +23,10 @@ export class AdminServiceService {
     });
   }
 
+  forgotpassword(body: any){
+    return this._http.post(this.backendService+'/users/forgot-password', body,{
+        observe: 'body'
+    });
+  }
+
 }
