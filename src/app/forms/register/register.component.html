@@ -1,0 +1,57 @@
+<app-navbar></app-navbar>
+
+<div class="main">
+  <form class="sign-in example-form" [formGroup]="registerForm" novalidate>
+
+    <mat-form-field class="example-full-width-one" appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput id="name" formControlName="name" placeholder="John Doe">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width-one" appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput id="email" formControlName="email" placeholder="demo@gmail.com">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width-one" appearance="outline">
+      <mat-label>Phone Number</mat-label>
+      <input matInput id="number" formControlName="mobile" placeholder="987654321">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width-one" appearance="outline">
+      <mat-label>College Name</mat-label>
+      <input matInput id="clgname" formControlName="college" placeholder="college name">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width-one" appearance="outline">
+      <mat-label>Current Year</mat-label>
+      <input matInput id="year" formControlName="current_year" placeholder="3">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width-one" appearance="outline">
+      <mat-label>Branch</mat-label>
+      <input matInput id="branch" formControlName="branch" placeholder="Branch name">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width-one" appearance="outline">
+      <mat-label>College Id</mat-label>
+      <input matInput id="clgid" formControlName="college_id" placeholder="college id">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width-one" appearance="outline">
+      <mat-label>Gender</mat-label>
+      <input matInput id="gender" formControlName="gender" placeholder="">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width-one" appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput id="password" formControlName="password" placeholder="password">
+    </mat-form-field>
+
+  </form>
+  <div class="btn">
+  <button mat-raised-button color="primary" class="mat-raised-button mat-primary submit"  type="submit" [disabled]="!registerForm.valid" (click)="register()">Register</button>
+  </div>
+</div>
+
+<h3 style="text-align: center;cursor: pointer" routerLink="/login">Already have an account click here to login</h3>

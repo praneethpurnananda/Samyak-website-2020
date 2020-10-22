@@ -2412,6 +2412,10 @@ img{
 	font-weight: 700;
 }
 
+.login:hover{
+	color: #000 !important;
+}
+
 .banner-meetup .countdown{
 	position:relative;
 	text-align: center;

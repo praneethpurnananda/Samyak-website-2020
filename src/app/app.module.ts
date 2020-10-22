@@ -8,6 +8,8 @@ import * as $ from "jquery";
 
 //own modules
 import { HomeModule } from "./home/home.module";
+import { UserFormsModule } from "./forms/forms.module";
+import { NavbarFooterModule } from "./navbar-footer/navbar-footer.module"
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { HomeModule } from "./home/home.module";
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HomeModule
+    HomeModule,
+    UserFormsModule,
+    NavbarFooterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
