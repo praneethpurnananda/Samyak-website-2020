@@ -1,16 +1,40 @@
 .main{
   margin-top: 4%;
 }
+.personal-container{
+  align-items: center;
+  width: 1250px;
+  margin-right: 70px;
+  display: flex;
+}
+
+.personal-container-left{
+  float: left;
+  width: 990px;
+  margin-left: 300px;
+
+}
+.professional-container-left{
+  float: left;
+  width: 990px;
+  margin-left: 300px;
+
+}
 
 .sign-in{
-  display: flex;
+  /* display: flex; */
   justify-content: space-around;
+  /* align-items: center; */
   flex-wrap: wrap;
+  /* border: 1px;
+  margin-left: 103px;
+  margin-right: 103px; */
 }
 
 .example-full-width-one{
   width: 30%;
   margin-bottom: 2%;
+  margin-left: 19px;
 }
 
 .btn{
@@ -18,3 +42,9 @@
   justify-content: center;
   align-items: center;
 }
+
+.fieldset-s-branch{
+  border: 1px solid #999;
+  border-radius: 8px;
+}
+
