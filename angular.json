@@ -152,5 +152,8 @@
       }
     }
   },
-  "defaultProject": "samyak-website"
+  "defaultProject": "samyak-website",
+  "cli": {
+    "analytics": "eaaf5555-58d5-4957-8704-77e193927929"
+  }
 }
