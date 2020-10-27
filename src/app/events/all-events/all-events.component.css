@@ -1,0 +1,273 @@
+
+
+  .portfolio_area .row {
+    margin-bottom: -15px;
+  }
+  .sec_pad {
+    padding: 100px 0px;
+  }
+  /* galary-filter , gallary-post, galary-item css */
+  
+.gallery_filter li {
+    font-size: 16px;
+    color: #777777;
+    transition: color 0.3s linear;
+    cursor: pointer;
+    margin-bottom: 22px;
+  }
+  .gallery_filter li.active {
+    font-weight: 600;
+    color: #7a51ed;
+  }
+  .gallery_filter li:hover {
+    color: #7a51ed;
+  }
+  
+  .gallery_item {
+    margin-bottom: 30px;
+  }
+  
+  .gallery_post {
+    cursor: pointer;
+  }
+  .gallery_post .img {
+    overflow: hidden;
+  }
+  .gallery_post img {
+    width: 100%;
+    transition: all 0.9s linear;
+  }
+  .gallery_post .gallery_text_info {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: -38px;
+    position: relative;
+    z-index: 0;
+  }
+  .gallery_post .gallery_text_info .gallery_content {
+    background-color: white;
+    box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.08);
+  }
+  .gallery_post .gallery_text_info .gallery_content:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: -moz-linear-gradient(140deg, rgba(73, 49, 230, 0.9) 0%, #7a51ed 100%);
+    background-image: -webkit-linear-gradient(140deg, rgba(73, 49, 230, 0.9) 0%, #7a51ed 100%);
+    background-image: -ms-linear-gradient(140deg, rgba(73, 49, 230, 0.9) 0%, #7a51ed 100%);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s linear;
+  }
+  .gallery_post:hover img {
+    transform: scale(1.1);
+  }
+  .gallery_post:hover .gallery_content:before {
+    opacity: 1;
+  }
+  .gallery_post:hover .gallery_content h3, .gallery_post:hover .gallery_content .g_tag {
+    color: #fff;
+  }
+  
+  .gallery_content {
+    padding: 18px 30px;
+    position: relative;
+    z-index: 1;
+  }
+  .gallery_content h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 0px;
+    transition: color 0.3s linear;
+  }
+  .gallery_content .g_tag {
+    color: #777;
+    font-size: 14px;
+    transition: color 0.3s linear;
+  }
+  
+.gallery_filter_two {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  .gallery_filter_two li {
+    display: inline-block;
+  }
+  .gallery_filter_two li + li {
+    margin-left: 40px;
+  }
+  
+  .gallery_inner_two {
+    margin: 0px;
+  }
+  .gallery_inner_two .gallery_item {
+    padding: 0px;
+    margin-bottom: 0;
+  }
+  
+  .gallery_post_two {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .gallery_post_two .img {
+    position: relative;
+    z-index: 0;
+  }
+  .gallery_post_two .img:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: -moz-linear-gradient(140deg, rgba(73, 49, 230, 0.9) 0%, #7a51ed 100%);
+    background-image: -webkit-linear-gradient(140deg, rgba(73, 49, 230, 0.9) 0%, #7a51ed 100%);
+    background-image: -ms-linear-gradient(140deg, rgba(73, 49, 230, 0.9) 0%, #7a51ed 100%);
+    position: absolute;
+    opacity: 0;
+    transition: all 0.5s linear;
+    z-index: 1;
+  }
+  .gallery_post_two .img img {
+    transition: all 0.8s linear;
+  }
+  .gallery_post_two .hover_text {
+    position: absolute;
+    bottom: 0;
+    padding: 40px;
+  }
+  .gallery_post_two .hover_text a {
+    display: block;
+    overflow: hidden;
+  }
+  .gallery_post_two .hover_text h3 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 2px;
+    transform: translateY(100%);
+    transition: all 0.7s linear;
+  }
+  .gallery_post_two .hover_text .g_tag {
+    font-size: 14px;
+    color: #fff;
+    transform: translateY(100%);
+    transition: all 0.9s linear;
+  }
+  .gallery_post_two:hover .img:before {
+    opacity: 1;
+  }
+  .gallery_post_two:hover .img img {
+    transform: scale(1.2);
+  }
+  .gallery_post_two:hover .hover_text h3, .gallery_post_two:hover .hover_text .g_tag {
+    transform: translateY(0);
+  }
+  
+  .gallery_inner_three {
+    margin: -8px;
+  }
+  .gallery_inner_three .gallery_item {
+    padding: 8px;
+    margin-bottom: 0;
+  }
+  
+  .gallery_inner_four .gallery_item .gallery_post .img {
+    border-radius: 10px;
+  }
+  .gallery_inner_four .gallery_item .gallery_post .gallery_content {
+    padding: 26px 0px 0px;
+  }
+  .gallery_inner_four .gallery_item .gallery_post .gallery_content h3 {
+    color: #101010;
+  }
+  .gallery_inner_four .gallery_item .gallery_post .gallery_content h3:hover {
+    color: #7a51ed;
+  }
+  .gallery_inner_four .gallery_item .gallery_post .gallery_content .g_tag {
+    color: #777;
+  }
+  .gallery_inner_four .gallery_item .gallery_post .gallery_content .g_tag:hover {
+    color: #7a51ed;
+  }
+  .text-center {
+    text-align: center!important;
+}
+
+  /* container-css */
+  .container{
+      width:100%;
+      padding-right:15px;
+      padding-left:15px;
+      margin-right:auto;
+      margin-left:auto
+    }
+    @media (min-width:576px){
+        .container{
+            max-width:540px
+        }
+    }
+    @media (min-width:768px){
+        .container{
+            max-width:720px
+        }
+    }
+    
+    @media (min-width:992px){
+        .container{
+            
+            max-width:960px
+        }
+    }
+    @media (min-width:1200px)
+    {
+        .container{
+            
+            max-width:1140px
+        }
+    }
+
+    /* row css */
+
+    .row{
+        display:-ms-flexbox;
+        display:flex;
+        -ms-flex-wrap:wrap;
+        flex-wrap:wrap;
+        
+        margin-right:-15px;
+        
+        margin-left:-15px;
+    }
+
+    .col-lg-2 .col-lg-4 .col-sm-6{
+        position:relative;
+        width:100%;
+        padding-right:15px;
+        padding-left:15px;
+    }
+    .col-lg-2{
+        -ms-flex:0 0 16.666667%;
+        flex:0 0 16.666667%;
+        max-width:16.666667%
+    }
+
+    .col-lg-4{
+        -ms-flex:0 0 33.333333%;
+        flex:0 0 33.333333%;
+        max-width:33.333333%
+    }
+
+    .col-sm-6{
+        -ms-flex:0 0 50%;
+        flex:0 0 50%;
+        max-width:50%
+    }
+    .list-unstyled {
+        padding-left: 0;
+        /* list-style: none; */
+    }
