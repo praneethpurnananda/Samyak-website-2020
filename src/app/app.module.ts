@@ -9,7 +9,8 @@ import * as $ from "jquery";
 //own modules
 import { HomeModule } from "./home/home.module";
 import { UserFormsModule } from "./forms/forms.module";
-import { NavbarFooterModule } from "./navbar-footer/navbar-footer.module"
+import { NavbarFooterModule } from "./navbar-footer/navbar-footer.module";
+import { EventsModule } from "./events/events.module";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NavbarFooterModule } from "./navbar-footer/navbar-footer.module"
     BrowserAnimationsModule,
     HomeModule,
     UserFormsModule,
-    NavbarFooterModule
+    NavbarFooterModule,
+    EventsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

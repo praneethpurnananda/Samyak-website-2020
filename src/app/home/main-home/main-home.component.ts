@@ -19,7 +19,6 @@ export class MainHomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
   }
 
 }

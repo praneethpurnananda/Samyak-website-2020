@@ -12,4 +12,11 @@ export class AllEventsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+test = "helo"
+
+demo = [
+  {title: 'helo00'},
+  {title: 'eed'}
+]
+
 }
