@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminServiceService } from "../../admin-service.service";
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _service: AdminServiceService) { }
 
   ngOnInit(): void {
+    this._service.getNavbarEventData()
+    .subscribe(
+      data => console.log(data),
+      error => console.log(error)
+    );
   }
 
 }

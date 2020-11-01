@@ -13,6 +13,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -22,9 +23,10 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ChangePaswordComponent } from './change-pasword/change-pasword.component';
+import { VerifyEmailComponent } from './verify-email/verify-email.component';
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, ForgotPasswordComponent, ChangePaswordComponent],
+  declarations: [LoginComponent, RegisterComponent, ForgotPasswordComponent, ChangePaswordComponent, VerifyEmailComponent],
   imports: [
     CommonModule,
     BrowserModule,
@@ -34,11 +36,13 @@ import { ChangePaswordComponent } from './change-pasword/change-pasword.componen
     HttpClientModule,
     NavbarFooterModule,
     MatFormFieldModule,
-   MatInputModule,
-   MatButtonModule,
-   MatIconModule,
-   MatSnackBarModule,
-   MatProgressBarModule
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
+    MatSnackBarModule,
+    MatProgressBarModule,
+    MatSelectModule,
+
   ]
 })
 export class UserFormsModule { }

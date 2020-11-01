@@ -29,4 +29,14 @@ export class AdminServiceService {
     });
   }
 
+  getEvents(id){
+    return this._http.get(this.backendService+'/events/get-events', {
+      params: new HttpParams().append('event_department', id).append('event_type', 'Technical'),
+    });
+  }
+
+  getNavbarEventData(){
+    return this._http.get(this.backendService+'/events/event-types');
+  }
+
 }

@@ -8,6 +8,7 @@ import * as $ from "jquery";
 
 //own modules
 import { HomeModule } from "./home/home.module";
+import { AboutModule } from "./about/about.module";
 import { UserFormsModule } from "./forms/forms.module";
 import { NavbarFooterModule } from "./navbar-footer/navbar-footer.module";
 import { EventsModule } from "./events/events.module";
@@ -21,6 +22,7 @@ import { EventsModule } from "./events/events.module";
     AppRoutingModule,
     BrowserAnimationsModule,
     HomeModule,
+    AboutModule,
     UserFormsModule,
     NavbarFooterModule,
     EventsModule

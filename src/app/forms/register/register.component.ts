@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormBuilder, FormGroup, NgForm, Validators, FormGroupDirective} from '@angular/forms';
 import { AdminServiceService } from "../../admin-service.service";
 import { Router } from '@angular/router';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +12,16 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
-  constructor(private fb: FormBuilder,private _service: AdminServiceService,private router: Router) {
+  gender = [
+    {value: 'Male', viewValue: 'Male'},
+    {value: 'Female', viewValue: 'Female'}
+  ];
+  branch = [
+    {value: 'CSE', viewValue: 'Cse'},
+    {value: 'ECE', viewValue: 'Ece'},
+    {value: 'CIVIL', viewValue: 'Civil'}
+  ];
+  constructor(private fb: FormBuilder,private _service: AdminServiceService,private router: Router,private _snackBar: MatSnackBar) {
       this.registerForm = this.fb.group({
         name: ['', Validators.required],
         email: ['', [Validators.required,Validators.email]],
@@ -32,7 +42,8 @@ export class RegisterComponent implements OnInit {
     this._service.register(this.registerForm.value)
     .subscribe(
       data => {
-        this.router.navigate['/login']
+        console.log(data),
+        this.router.navigate(['/login'])
       },
       error => console.log(error)
     );

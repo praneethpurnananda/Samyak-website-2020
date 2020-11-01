@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainHomeComponent implements OnInit {
 
+  isLoggedin = false;
   phoneNumber:string = "1-000-000-0000";
   emialId:string = "samya@kluniversity.in";
   socialMedia = [
@@ -15,10 +16,19 @@ export class MainHomeComponent implements OnInit {
     {title: "Youtube" , link: "" , icon: "fab fa-youtube"},
     {title: "Instagram" , link: "" , icon: "fab fa-instagram"}
   ];
-  samyakLogo = "https://klsamyak.in/images/samyak5.png";
+  samyakLogo = "..../../assets/images/nav-logo.png";
   constructor() { }
 
   ngOnInit(): void {
+    if(localStorage.getItem('token'))
+      this.isLoggedin =  true;
+    else
+      this.isLoggedin = false;
+  }
+
+  logout(){
+    localStorage.removeItem('token');
+    this.isLoggedin = false;
   }
 
 }
