@@ -23,6 +23,7 @@ import { AllEventsComponent  , MoreInfo} from './all-events/all-events.component
     MatCardModule,
     MatButtonModule,
     MatDialogModule
-  ]
+  ],
+  providers: [MoreInfo]
 })
 export class EventsModule { }
