@@ -29,14 +29,30 @@ export class AdminServiceService {
     });
   }
 
-  getEvents(id){
+  verifyPasswordToken(body: any){
+    return this._http.post(this.backendService+'/users/check-token', body,{
+        observe: 'body'
+    });
+  }
+
+  resetPassword(body: any){
+    return this._http.post(this.backendService+'/users/change-password', body,{
+        observe: 'body'
+    });
+  }
+
+  getEvents(id1,id2){
     return this._http.get(this.backendService+'/events/get-events', {
-      params: new HttpParams().append('event_department', id).append('event_type', 'Technical'),
+      params: new HttpParams().append('event_department', id2).append('event_type', id1),
     });
   }
 
   getNavbarEventData(){
     return this._http.get(this.backendService+'/events/event-types');
+  }
+
+  verifyEmail(token){
+    return this._http.get(this.backendService+'/users/verify/'+token);
   }
 
 }

@@ -11,16 +11,21 @@ import { ActivatedRoute } from '@angular/router';
 export class AllEventsComponent implements OnInit {
 
   events;
+
   constructor(public dialog: MatDialog, private _service: AdminServiceService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-    let id = this.route.snapshot.params['id'];
-    console.log(id);
-    this._service.getEvents(id)
+    let id1 = this.route.snapshot.params['id1'];
+    console.log(id1);
+    let id2 = this.route.snapshot.params['id2'];
+    console.log(id2)
+    this._service.getEvents(id1,id2)
     .subscribe(
-      data => this.events =  data['events'],
+      data => {this.events =  data['events'],console.log(this.events)},
       error => console.log(error)
     );
+
+
   }
 
 

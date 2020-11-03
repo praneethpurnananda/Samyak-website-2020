@@ -19,7 +19,7 @@
                <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInRight" *ngFor="let item of events">
                    <div class="inner-box">
                        <div class="image-box">
-                           <figure class="image"><a href="blog-single.html"><img src="https://quizzical-mayer-171d10.netlify.app/media/images/get_spaced_GHhuUpp.jpg" alt=""></a></figure>
+                           <figure class="image"><a href="blog-single.html"><img [src]="item.image" alt=""></a></figure>
                        </div>
                        <div class="lower-content">
                            <ul class="post-info">

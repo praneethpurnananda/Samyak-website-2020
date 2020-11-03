@@ -24,9 +24,10 @@ import { RegisterComponent } from './register/register.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ChangePaswordComponent } from './change-pasword/change-pasword.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, ForgotPasswordComponent, ChangePaswordComponent, VerifyEmailComponent],
+  declarations: [LoginComponent, RegisterComponent, ForgotPasswordComponent, ChangePaswordComponent, VerifyEmailComponent, ResetPasswordComponent],
   imports: [
     CommonModule,
     BrowserModule,

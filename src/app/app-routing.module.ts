@@ -8,6 +8,7 @@ import { ForgotPasswordComponent } from "./forms/forgot-password/forgot-password
 import { AllEventsComponent } from "./events/all-events/all-events.component"
 import { MainAboutComponent } from "./about/main-about/main-about.component";
 import { VerifyEmailComponent } from "./forms/verify-email/verify-email.component";
+import { ResetPasswordComponent } from "./forms/reset-password/reset-password.component";
 
 const routes: Routes = [
   {path: '' , component: MainHomeComponent},
@@ -15,8 +16,9 @@ const routes: Routes = [
   {path: 'login' , component: LoginComponent},
   {path: 'register' , component: RegisterComponent},
   {path: 'forgotpassword' , component: ForgotPasswordComponent},
-  {path: 'events/:id' , component: AllEventsComponent},
-  {path: 'verify-email/:token' , component: VerifyEmailComponent}
+  {path: 'events/:id1/:id2' , component: AllEventsComponent},
+  {path: 'verify-email/:token' , component: VerifyEmailComponent},
+  {path: 'reset-password/:token' , component: ResetPasswordComponent}
 ];
 
 @NgModule({

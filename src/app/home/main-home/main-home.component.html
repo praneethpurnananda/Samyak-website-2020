@@ -48,10 +48,10 @@
                                 <li><a routerLink="/about-samyak">About</a></li>
                                 <li class="dropdown"><a>Events</a>
                                     <ul>
-                                        <li class="dropdown"><a>Technical</a>
-                                            <ul>
-                                                <li><a routerLink="/events/CSE">Cse</a></li>
-                                                <li><a routerLink="/events/ece">Ece</a></li>
+                                        <li class="dropdown" *ngFor="let item of navbarEvents">
+                                          <a (click)="toEvent(item.type , 'all')">{{item.type}}</a>
+                                            <ul *ngIf="item.departments">
+                                                <li *ngFor="let dep of item.departments"><a (click)="toEvent(item.type , dep)">{{dep}}</a></li>
                                             </ul>
                                         </li>
                                     </ul>
