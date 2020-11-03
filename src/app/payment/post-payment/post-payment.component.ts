@@ -13,7 +13,15 @@ export class PostPaymentComponent implements OnInit {
 
   ngOnInit(): void {
     const payment_id = this.route.snapshot.queryParamMap.get('payment_id');
-    console.log(payment_id);
+    const payment_status = this.route.snapshot.queryParamMap.get('payment_status');
+    const payment_request_id = this.route.snapshot.queryParamMap.get('payment_request_id');
+
+    let tmp   = {payment_id: payment_id , payment_status: payment_status , payment_request_id: payment_request_id};
+    this._service.postPayment(tmp)
+    .subscribe(
+      data => console.log(data),
+      error => console.log(error)
+    );
   }
 
 }

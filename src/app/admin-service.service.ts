@@ -61,4 +61,11 @@ export class AdminServiceService {
     });
   }
 
+  postPayment(body: any){
+    return this._http.post(this.backendService+'/payments/add-payment', body,{
+        observe: 'body',
+        headers: new HttpHeaders().append('x-access-token', localStorage.getItem('token'))
+    });
+  }
+
 }
