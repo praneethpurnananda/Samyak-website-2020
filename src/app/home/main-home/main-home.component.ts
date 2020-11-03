@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class MainHomeComponent implements OnInit {
 
+  title = "World Digital";
   isLoggedin = false;
   phoneNumber:string = "1-000-000-0000";
   emialId:string = "samya@kluniversity.in";
@@ -33,6 +34,13 @@ export class MainHomeComponent implements OnInit {
         data => {this.navbarEvents = data['events'],console.log(this.navbarEvents)},
         error => console.log(error)
       );
+
+      setTimeout(() => {
+        this.title = "Hello World";
+        setTimeout(() => {
+          this.title = "Welcome Samyak"
+        }, 5000);
+      }, 5000);
   }
 
   logout(){

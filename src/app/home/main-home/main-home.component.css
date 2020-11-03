@@ -5,3 +5,45 @@
 .theme-btn:hover{
   color: #000 !important;
 }
+
+.landing-text .title{
+  opacity: 1 !important;
+  display: block !important;
+  font-size: 28px !important;
+  color: #faac1D !important;
+  font-weight: 500 !important;
+  margin-bottom: 25px !important;
+}
+
+.landing-text h2{
+  display: block;
+  font-size: 74px;
+  line-height: 1.2em;
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.landing-text .info-list{
+  position: relative;
+  margin-bottom: 45px;
+}
+
+.landing-text .info-list li{
+  position: relative;
+  display: inline-block;
+  font-size: 18px;
+  line-height: 26px;
+  color: #ffffff;
+  font-weight: 400;
+  margin: 0 10px;
+  text-transform: uppercase;
+}
+
+.landing-text .info-list li .icon{
+  color: #faac1D;
+  margin-right: 10px;
+  float: left;
+  font-size: 18px;
+  line-height: 26px;
+}

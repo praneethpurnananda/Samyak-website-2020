@@ -55,4 +55,10 @@ export class AdminServiceService {
     return this._http.get(this.backendService+'/users/verify/'+token);
   }
 
+  createRequest(){
+    return this._http.get(this.backendService+'/payments/create-request', {
+       headers: new HttpHeaders().append('x-access-token', localStorage.getItem('token'))
+    });
+  }
+
 }
