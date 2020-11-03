@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminServiceService } from "../../admin-service.service";
+import { ActivatedRoute , Router} from '@angular/router';
 
 @Component({
   selector: 'app-post-payment',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostPaymentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _service: AdminServiceService , private route: ActivatedRoute , private router: Router) { }
 
   ngOnInit(): void {
+    const payment_id = this.route.snapshot.queryParamMap.get('payment_id');
+    console.log(payment_id);
   }
 
 }
