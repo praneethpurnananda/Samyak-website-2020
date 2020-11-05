@@ -13,6 +13,8 @@ import { AboutModule } from "./about/about.module";
 import { UserFormsModule } from "./forms/forms.module";
 import { NavbarFooterModule } from "./navbar-footer/navbar-footer.module";
 import { EventsModule } from "./events/events.module";
+import { TeamModule } from "./team/team.module";
+import { PaymentModule } from "./payment/payment.module";
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { EventsModule } from "./events/events.module";
     AboutModule,
     UserFormsModule,
     NavbarFooterModule,
-    EventsModule
+    EventsModule,
+    TeamModule,
+    PaymentModule
   ],
   providers: [ {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
