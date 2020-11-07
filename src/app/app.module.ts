@@ -15,6 +15,7 @@ import { NavbarFooterModule } from "./navbar-footer/navbar-footer.module";
 import { EventsModule } from "./events/events.module";
 import { TeamModule } from "./team/team.module";
 import { PaymentModule } from "./payment/payment.module";
+import { MyAccountModule } from "./my-account/my-account.module";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PaymentModule } from "./payment/payment.module";
     NavbarFooterModule,
     EventsModule,
     TeamModule,
-    PaymentModule
+    PaymentModule,
+    MyAccountModule
   ],
   providers: [ {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]

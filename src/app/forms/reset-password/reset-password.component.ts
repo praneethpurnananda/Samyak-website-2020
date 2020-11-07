@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormBuilder, FormGroup, NgForm, Validators, FormGroupDirective} from '@angular/forms';
 import { AdminServiceService } from "../../admin-service.service";
 import { Router , ActivatedRoute} from '@angular/router';
-
+import { passwordValidation } from "../passwordvalidate";
 
 @Component({
   selector: 'app-reset-password',
@@ -13,11 +13,18 @@ export class ResetPasswordComponent implements OnInit {
 
   resetPassword: FormGroup;
   hide: boolean = true;
+  hide1: boolean = true;
   token;
+  logo;
   constructor(private fb: FormBuilder,private _service: AdminServiceService,private router: Router,private route: ActivatedRoute) {
     this.resetPassword = this.fb.group({
-      password: ['', Validators.required]
+      password: ['', Validators.required],
+      confirmpassword: ['', [passwordValidation , Validators.required]]
     });
+    this.resetPassword.controls.password.valueChanges
+    .subscribe(
+      x => this.resetPassword.controls.confirmpassword.updateValueAndValidity()
+    )
   }
 
   ngOnInit(): void {
@@ -30,6 +37,7 @@ export class ResetPasswordComponent implements OnInit {
       error => console.log(error)
     )
 
+    this.logo = this._service.getBlueLogo();
   }
 
   submit(){

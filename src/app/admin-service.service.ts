@@ -82,6 +82,12 @@ export class AdminServiceService {
     });
   }
 
+  getMyEvents():Observable<object>{
+    return this._http.get(this.backendService+'/register/user-events', {
+      headers: new HttpHeaders().append('x-access-token', localStorage.getItem('client-token'))
+    });
+  }
+
 
 
 

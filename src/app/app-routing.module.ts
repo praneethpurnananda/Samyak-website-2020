@@ -13,6 +13,7 @@ import { ValidatingUserComponent } from "./payment/validating-user/validating-us
 import { PostPaymentComponent } from "./payment/post-payment/post-payment.component";
 import { MainTeamComponent } from "./team/main-team/main-team.component";
 import { TechTalksComponent } from "./events/tech-talks/tech-talks.component";
+import { AccountComponent } from "./my-account/account/account.component";
 
 const routes: Routes = [
   {path: '' , component: MainHomeComponent},
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path: 'validate-user' , component: ValidatingUserComponent},
   {path: 'payment-verification' , component: PostPaymentComponent},
   {path: 'samyak-team' , component: MainTeamComponent},
-  {path: 'techtalks' , component: TechTalksComponent}
+  {path: 'techtalks' , component: TechTalksComponent},
+  {path: 'my-account' , component: AccountComponent}
 ];
 
 @NgModule({

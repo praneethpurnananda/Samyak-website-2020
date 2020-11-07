@@ -1,0 +1,34 @@
+<!-- News Section -->
+   <section class="news-section">
+       <div class="anim-icons">
+           <span class="icon icon-circle-blue wow fadeIn"></span>
+           <span class="icon twist-line-1 wow zoomIn"></span>
+           <span class="icon twist-line-2 wow zoomIn"></span>
+           <span class="icon twist-line-3 wow zoomIn"></span>
+       </div>
+       <div class="auto-container">
+           <!-- <div class="sec-title text-center">
+               <span class="title">Blogs</span>
+               <h2>Latest News</h2>
+           </div> -->
+
+           <div class="row">
+               <!-- News Block Three -->
+               <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInRight" *ngFor="let item of myEvents">
+                   <div class="inner-box">
+                       <div class="image-box">
+                           <figure class="image"><a href="blog-single.html"><img [src]="item.image" alt=""></a></figure>
+                       </div>
+                       <div class="lower-content">
+                           <ul class="post-info">
+                               <li><span class="far fa-user"></span>{{item.department}}</li>
+                           </ul>
+                           <h4><a href="blog-single.html">{{item.name}}</a></h4>
+                           <div class="btn-box"><a  class="read-more">Read More</a> &nbsp;&nbsp; <a  class="read-more" (click)="undo(item)">Un register</a></div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
+   <!--End News Section -->
