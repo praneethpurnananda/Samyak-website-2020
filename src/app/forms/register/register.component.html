@@ -14,6 +14,7 @@
     <mat-form-field class="example-full-width-one" appearance="outline">
       <mat-label>Name</mat-label>
       <input matInput id="name" formControlName="name" placeholder="John Doe">
+      <mat-error *ngIf="registerForm.get('name').hasError('required') ">Mobile number is required</mat-error>
     </mat-form-field>
 
     <mat-form-field class="example-full-width-one" appearance="outline">
@@ -23,23 +24,39 @@
           {{i.viewValue}}
         </mat-option>
       </mat-select>
+      <mat-error *ngIf="registerForm.get('gender').hasError('required') ">Mobile number is required</mat-error>
     </mat-form-field>
 
 
     <mat-form-field class="example-full-width-one" appearance="outline">
       <mat-label>Phone Number</mat-label>
       <input matInput id="number" formControlName="mobile" placeholder="987654321">
+      <mat-error *ngIf="registerForm.get('mobile').hasError('required') ">Mobile number is required</mat-error>
     </mat-form-field>
-
 
     <mat-form-field class="example-full-width-one" appearance="outline">
-      <mat-label>College Name</mat-label>
-      <input matInput id="clgname" formControlName="college" placeholder="college name">
+      <mat-label>College</mat-label>
+      <mat-select formControlName="college" [(value)]="selectedcollege" (selectionChange)="college()">
+        <mat-option  value="KLV"> Kl vijayawada</mat-option>
+        <mat-option  value="KLH"> KL hyderabad </mat-option>
+        <mat-option  value="">other</mat-option>
+      </mat-select>
+      <mat-error *ngIf="registerForm.get('college').hasError('required') ">Mobile number is required</mat-error>
     </mat-form-field>
+
+    <span *ngIf='field'>
+      <mat-form-field class="example-full-width-one" appearance="outline" >
+        <mat-label>College Name</mat-label>
+        <input matInput id="clgname" formControlName="college" placeholder="college name">
+      <mat-error *ngIf="registerForm.get('college').hasError('required') ">Mobile number is required</mat-error>
+    </mat-form-field>
+    </span>
+
 
     <mat-form-field class="example-full-width-one" appearance="outline">
       <mat-label>Current Year</mat-label>
       <input matInput id="year" formControlName="current_year" placeholder="3">
+      <mat-error *ngIf="registerForm.get('current_year').hasError('required') ">Mobile number is required</mat-error>
     </mat-form-field>
 
     <mat-form-field class="example-full-width-one" appearance="outline">
@@ -49,6 +66,7 @@
           {{i.viewValue}}
         </mat-option>
       </mat-select>
+      <mat-error *ngIf="registerForm.get('branch').hasError('required') ">Mobile number is required</mat-error>
     </mat-form-field>
     </div>
     <div class = "profile">
@@ -65,23 +83,31 @@
     <mat-form-field class="example-full-width-one" appearance="outline">
       <mat-label>College Id</mat-label>
       <input matInput id="clgid" formControlName="college_id" placeholder="college id">
+      <mat-error *ngIf="registerForm.get('college_id').hasError('required') ">Mobile number is required</mat-error>
     </mat-form-field>
     <mat-form-field class="example-full-width-one" appearance="outline">
       <mat-label>Email</mat-label>
       <input matInput id="email" formControlName="email" placeholder="demo@gmail.com">
+      <mat-error *ngIf="registerForm.get('email').hasError('required') ">Mobile number is required</mat-error>
     </mat-form-field>
 
 
     <mat-form-field class="example-full-width-one" appearance="outline">
       <mat-label>Password</mat-label>
       <input matInput id="password" formControlName="password" placeholder="password">
+      <mat-error *ngIf="registerForm.get('password).hasError('required') ">Mobile number is required</mat-error>
     </mat-form-field>
   </div>
   </div>
   </form>
+  <div class = "personal-container">
+    <div class="professional-container-left">
   <div class="btn">
   <button mat-raised-button color="primary" class="mat-raised-button mat-primary submit"  type="submit" [disabled]="!registerForm.valid" (click)="register()">Register</button>
+  <h3 class="login"style="text-align: center;cursor: pointer" routerLink="/login"> click here to login</h3>
+  </div>
+  </div>
   </div>
 </div>
 
-<h3 style="text-align: center;cursor: pointer" routerLink="/login">Already have an account click here to login</h3>
+

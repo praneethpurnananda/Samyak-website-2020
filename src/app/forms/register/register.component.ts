@@ -10,7 +10,8 @@ import {MatSnackBar} from '@angular/material/snack-bar';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
+  selectedcollege:string;
+  field=false;
   registerForm: FormGroup;
   gender = [
     {value: 'Male', viewValue: 'Male'},
@@ -37,7 +38,14 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  college(){
+    if(this.selectedcollege===""){
+      this.field=true;
+    }
+    else{
+      this.field=false;
+    }
+  }
   register(){
     this._service.register(this.registerForm.value)
     .subscribe(
