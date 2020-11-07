@@ -8,6 +8,9 @@ import { environment } from "../environments/environment";
 })
 export class AdminServiceService {
   backendService = environment.backendService;
+  blueLogo = '../assets/ui-images/samyak-bluelogo.png';
+  chatBotbg = "../assets/ui-images/chatbot-img.svg";
+  formImg = "../assets/ui-images/form.svg";
 
   constructor(private _http: HttpClient) { }
 
@@ -57,15 +60,42 @@ export class AdminServiceService {
 
   createRequest(){
     return this._http.get(this.backendService+'/payments/create-request', {
-       headers: new HttpHeaders().append('x-access-token', localStorage.getItem('token'))
+       headers: new HttpHeaders().append('x-access-token', localStorage.getItem('client-token'))
     });
   }
 
   postPayment(body: any){
     return this._http.post(this.backendService+'/payments/add-payment', body,{
         observe: 'body',
-        headers: new HttpHeaders().append('x-access-token', localStorage.getItem('token'))
+        headers: new HttpHeaders().append('x-access-token', localStorage.getItem('client-token'))
     });
   }
 
+  getTechTalks():Observable<object>{
+    return this._http.get(this.backendService+'/techtalks/get-talks');
+  }
+
+  registerEvent(body: any){
+    return this._http.post(this.backendService+'/register/event-register', body,{
+        observe: 'body',
+        headers: new HttpHeaders().append('x-access-token', localStorage.getItem('client-token'))
+    });
+  }
+
+
+
+
+
+  //LOCAL MEDIA
+  getBlueLogo(){
+    return this.blueLogo;
+  }
+
+  getChatBotbg(){
+    return this.chatBotbg;
+  }
+
+  getFomrbg(){
+    return this.formImg;
+  }
 }

@@ -10,10 +10,11 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { NavbarFooterModule } from "../navbar-footer/navbar-footer.module";
 
 import { AllEventsComponent  , MoreInfo} from './all-events/all-events.component';
+import { TechTalksComponent } from './tech-talks/tech-talks.component';
 
 
 @NgModule({
-  declarations: [AllEventsComponent , MoreInfo],
+  declarations: [AllEventsComponent , MoreInfo, TechTalksComponent],
   imports: [
     BrowserModule,
     CommonModule,

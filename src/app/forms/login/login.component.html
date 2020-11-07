@@ -1,16 +1,16 @@
-<app-navbar></app-navbar>
+<mat-progress-bar mode="indeterminate" *ngIf="isLoad"></mat-progress-bar>
 
-
-<body class="login-page">
+<body class="login-page" [ngStyle]="{ 'background-image' : 'url(' + bgImg +')' , 'background-position' : 'left' , 'background-repeat' : 'no-repeat'}">
   <main class="main_class">
 
     <form class="sign-in example-form" [formGroup]="loginForm" novalidate>
       <div class="login-block">
-        <h1 class="login_title">Samyak</h1>
+        <img [src]="logo" alt="" height="80" width="80">
+        <h1 class="login_title">Samyak Login</h1>
+
         <mat-form-field class="example-full-width-one" appearance="outline">
           <mat-label>Email</mat-label>
-          <input matInput id="email"  formControlName="email" placeholder="Samyak@gmail.com">
-
+          <input matInput type="email" class="email" id="email"  formControlName="email" placeholder="Samyak@gmail.com">
           <mat-error *ngIf="loginForm.controls.email.hasError('email') && !loginForm.controls.email.hasError('required')">
             Invalid Email
           </mat-error>
@@ -18,9 +18,10 @@
             Email is required
           </mat-error>
         </mat-form-field>
+
         <mat-form-field class="example-full-width-one" appearance="outline">
           <mat-label>Password</mat-label>
-          <input matInput id="password" placeholder="Password" formControlName="password" [type]="hide ? 'password':'text'" />
+          <input matInput class="password" id="password" placeholder="Password" formControlName="password" [type]="hide ? 'password':'text'" />
           <mat-icon matSuffix (click)="hide = !hide" style="cursor: pointer;color: #092041 !important;">
             {{hide ? 'visibility' : 'visibility_off'}}
           </mat-icon>
@@ -28,8 +29,8 @@
             Password is required
           </mat-error>
         </mat-form-field>
-        <!--submit button-->
-        <button mat-raised-button color="primary" class="mat-raised-button mat-primary submit" [disabled]="!loginForm.valid" type="submit" (click)="login()">Login</button>
+
+        <button mat-raised-button color="primary" class="mat-raised-button mat-primary submit" type="submit" [disabled]="!loginForm.valid" type="submit" (click)="login()">Login</button>
         <div class="links_section">
           <span class="new_acc" routerLink="/register">
             Create an account
@@ -40,6 +41,7 @@
         </div>
       </div>
     </form>
+    <br>
     <h3 class="msg" *ngIf="msg">{{msg}}</h3>
   </main>
 </body>

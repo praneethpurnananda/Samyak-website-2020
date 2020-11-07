@@ -12,6 +12,7 @@ import { ResetPasswordComponent } from "./forms/reset-password/reset-password.co
 import { ValidatingUserComponent } from "./payment/validating-user/validating-user.component";
 import { PostPaymentComponent } from "./payment/post-payment/post-payment.component";
 import { MainTeamComponent } from "./team/main-team/main-team.component";
+import { TechTalksComponent } from "./events/tech-talks/tech-talks.component";
 
 const routes: Routes = [
   {path: '' , component: MainHomeComponent},
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path: 'reset-password/:token' , component: ResetPasswordComponent},
   {path: 'validate-user' , component: ValidatingUserComponent},
   {path: 'payment-verification' , component: PostPaymentComponent},
-  {path: 'samyak-team' , component: MainTeamComponent}
+  {path: 'samyak-team' , component: MainTeamComponent},
+  {path: 'techtalks' , component: TechTalksComponent}
 ];
 
 @NgModule({

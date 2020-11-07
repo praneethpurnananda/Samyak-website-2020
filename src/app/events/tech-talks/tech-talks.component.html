@@ -16,18 +16,17 @@
 
            <div class="row">
                <!-- News Block Three -->
-               <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInRight" *ngFor="let item of events">
+               <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInRight" *ngFor="let item of techtalks">
                    <div class="inner-box">
                        <div class="image-box">
                            <figure class="image"><a href="blog-single.html"><img [src]="item.image" alt=""></a></figure>
                        </div>
                        <div class="lower-content">
                            <ul class="post-info">
-                               <li><span class="far fa-user"></span>{{item.department}}</li>
+                               <li><span class="far fa-user"></span>{{item.speaker}}</li>
                            </ul>
-                           <h4><a href="blog-single.html">{{item.name}}</a></h4>
-                           <div class="btn-box"><a  class="read-more" (click)="moreInfo(item)">Read More</a> &nbsp;&nbsp; <a  class="read-more" (click)="register(item)">Register</a></div>
-
+                           <h4><a href="blog-single.html">{{item.title}}</a></h4>
+                           <div class="btn-box"><a  class="read-more">Read More</a></div>
                        </div>
                    </div>
                </div>

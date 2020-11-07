@@ -42,6 +42,15 @@ export class AllEventsComponent implements OnInit {
     });
  }
 
+ register(item){
+   let tmp = {eventId: item._id};
+   this._service.registerEvent(tmp)
+   .subscribe(
+     data => console.log(data),
+     error => console.log(error)
+   );
+ }
+
 }
 
 

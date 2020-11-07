@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormBuilder, FormGroup, NgForm, Validators, FormGroupDirective} from '@angular/forms';
 import { AdminServiceService } from "../../admin-service.service";
 import { Router } from '@angular/router';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { passwordValidation } from "../passwordvalidate";
 
 @Component({
   selector: 'app-register',
@@ -11,10 +12,19 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 })
 export class RegisterComponent implements OnInit {
 
+  isLoad:boolean = false;
+  hide1:boolean = true;
+  hide2:boolean = true;
+  formbg;
+  selectedcollege;
+  field=false;
   registerForm: FormGroup;
+  msg;
   gender = [
     {value: 'Male', viewValue: 'Male'},
-    {value: 'Female', viewValue: 'Female'}
+    {value: 'Female', viewValue: 'Female'},
+    {value: 'Other', viewValue: 'Others'},
+    {value: 'Prefer not to say', viewValue: 'Prefer not to say'}
   ];
   branch = [
     {value: 'CSE', viewValue: 'Cse'},
@@ -31,22 +41,54 @@ export class RegisterComponent implements OnInit {
         branch: ['', Validators.required],
         college_id: ['', Validators.required],
         gender: ['', Validators.required],
-        password: ['', Validators.required]
+        password: ['', Validators.required],
+        confirmPassword: ['', [passwordValidation , Validators.required]]
       });
+      this.registerForm.controls.password.valueChanges
+      .subscribe(
+        x => this.registerForm.controls.confirmPassword.updateValueAndValidity()
+      )
   }
+
 
   ngOnInit(): void {
+    this.formbg = this._service.getFomrbg();
+    this.isLoad = false;
   }
 
+  college(){
+    if(this.selectedcollege==="Other College Name"){
+      this.field=true;
+      this.registerForm.controls['college'].reset();
+    }
+    else{
+      this.field=false;
+    }
+  }
   register(){
+    this.isLoad = true;
+    this.openSnackBar('Validating...');
     this._service.register(this.registerForm.value)
     .subscribe(
       data => {
-        console.log(data),
+        this.openSnackBar('Almost Done...');
         this.router.navigate(['/login'])
+        this.isLoad = false;
+        this._snackBar.dismiss();
       },
-      error => console.log(error)
+      error => {
+        this.openSnackBar('Oops Unable to register...');
+        this.msg = error.error.message;
+        this.isLoad = false;
+        setTimeout(() => {
+          this._snackBar.dismiss();
+        }, 1000);
+      }
     );
+  }
+
+  openSnackBar(message: string) {
+    this._snackBar.open(message);
   }
 
 }
