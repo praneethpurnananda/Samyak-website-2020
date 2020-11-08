@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class AllEventsComponent implements OnInit {
 
   events;
-
+  myEvents;
   constructor(public dialog: MatDialog, private _service: AdminServiceService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -25,7 +25,24 @@ export class AllEventsComponent implements OnInit {
       error => console.log(error)
     );
 
+    this._service.getMyEvents()
+    .subscribe(
+      data => {
+        console.log(data);
+        this.myEvents = data
+      },
+      error => console.log(error)
+    );
 
+    this._service.checkToken()
+    .subscribe(
+      data => console.log(data),
+      error => console.log(error)
+    );
+  }
+
+  check(item){
+    return !(this.myEvents.find(event => event._id == item._id));
   }
 
 

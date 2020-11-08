@@ -26,6 +26,12 @@ export class AdminServiceService {
     });
   }
 
+  checkToken():Observable<object>{
+    return this._http.get(this.backendService+'/users/check-token', {
+      headers: new HttpHeaders().append('x-access-token', localStorage.getItem('client-token'))
+    });
+  }
+
   forgotpassword(body: any){
     return this._http.post(this.backendService+'/users/forgot-password', body,{
         observe: 'body'
@@ -88,6 +94,12 @@ export class AdminServiceService {
     });
   }
 
+  undoEvent(body: any){
+    return this._http.post(this.backendService+'/register/event-unregister', body,{
+      observe: 'body',
+      headers: new HttpHeaders().append('x-access-token', localStorage.getItem('client-token'))
+    });
+  }
 
 
 

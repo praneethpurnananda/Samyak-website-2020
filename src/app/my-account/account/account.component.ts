@@ -22,6 +22,16 @@ export class AccountComponent implements OnInit {
     );
   }
 
-  undo(item){}
+  undo(item){
+    let tmp  = {eventId: item._id};
+    this._service.undoEvent(tmp)
+    .subscribe(
+      data => {
+      console.log(data);
+      this.ngOnInit();
+    },
+    error => console.log(error)
+  );
+  }
 
 }

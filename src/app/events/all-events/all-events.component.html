@@ -26,7 +26,7 @@
                                <li><span class="far fa-user"></span>{{item.department}}</li>
                            </ul>
                            <h4><a href="blog-single.html">{{item.name}}</a></h4>
-                           <div class="btn-box"><a  class="read-more" (click)="moreInfo(item)">Read More</a> &nbsp;&nbsp; <a  class="read-more" (click)="register(item)">Register</a></div>
+                           <div class="btn-box"><a  class="read-more" (click)="moreInfo(item)">Read More</a> &nbsp;&nbsp; <a  class="read-more" (click)="register(item)" *ngIf="check(item)">Register</a></div>
 
                        </div>
                    </div>
