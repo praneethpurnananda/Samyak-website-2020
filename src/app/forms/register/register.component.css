@@ -1,9 +1,11 @@
 .main{
   margin-top: 4%;
+  height: auto;
+  overflow: auto;
 }
 .personal-container{
   align-items: center;
-  width: 1250px;
+  /* width: 1250px; */
   margin-right: 70px;
   display: flex;
 }
@@ -49,8 +51,16 @@
 }
 @media (max-width: 767px){
   .example-full-width-one{
-    margin-right: 307px;
+    margin-right: 0;
+    width: 80%;
 
   }
+  .personal-container-left{
+    margin-left: 127px;
+  }
+  .professional-container-left{
+    margin-left: 127px;
+  }
+
 }
 

@@ -1,3 +1,4 @@
+<html>
 <app-navbar></app-navbar>
 
 <head>
@@ -8,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>hello</title>
 </head>
+<body>
 <div class="main register">
   
 
@@ -82,7 +84,11 @@
   <div class="btn">
   <button mat-raised-button color="primary" class="mat-raised-button mat-primary submit"  type="submit" [disabled]="!registerForm.valid" (click)="register()">Register</button>
   </div>
-</div>
+
 
 <h3 style="text-align: center;cursor: pointer" routerLink="/login">Already have an account click here to login</h3>
+</div>
 
+</body>
+
+</html>
