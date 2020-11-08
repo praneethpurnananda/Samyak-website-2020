@@ -47,4 +47,10 @@
   border: 1px solid #999;
   border-radius: 8px;
 }
+@media (max-width: 767px){
+  .example-full-width-one{
+    margin-right: 307px;
+
+  }
+}
 
