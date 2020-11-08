@@ -41,7 +41,7 @@
 .col-md-3 {
 	-ms-flex: 0 0 25%;
 	flex: 0 0 25%;
-	max-width: 25%
+	max-width: 18%
 }
 .list-unstyled{
 			margin-top: 60px;
@@ -161,24 +161,7 @@ h4 {
 		padding-top: 3px;
 		margin-left: 36px;
 	}
-	  .price {
-		margin: 10px 0;
-		font-weight: 300;
-	  }
 	  
-	  .actions {
-		position: absolute;
-		bottom: 0px;
-		left: 0;
-		padding: 10px;
-		width: 100%;
-		background: #fff;
-	  }
-		.button {
-		  width: 48%;
-		  margin: 0 1% 0 1%;
-		  float: left;
-		}
 	  
 	
   
@@ -197,35 +180,96 @@ h4 {
 	
 	
 	}
-		.green-solid {
-		border: solid 2px #95AB63;
-		color: #fff;
-		background: #95AB63;
-		}
-			.green-solid:hover {
-			background: #BDD684;
-			border: solid 2px #BDD684;
-		}
-	
-	.backside {
-	  display: none;
-	}
-	 .backside .show {
-		display: inline-block;
-		transform: rotateX(180deg);
+
+
+	.gallery_post {
+		cursor: pointer;
+	  }
+	  .gallery_post .img {
+		overflow: hidden;
+	  }
+	  .gallery_post img {
+		width: 100%;
+		transition: all 0.9s linear;
 	  }
 	
-	.front.hide {
-	  display: none;
-	}
-	.black-simple {
-	  border: solid 2px #10222B;
-	}
-	  .back-simple:hover {
-	   background: #10222B;
-	   color: #fff; 
-	  }
 	
+	.gallery_post .gallery_text_info {
+		padding-left: 20px;
+		padding-right: 20px;
+		margin-top: -38px;
+		position: relative;
+		z-index: 0;
+	  }
+
+	  .gallery_post .gallery_text_info .gallery_content {
+		background-color: white;
+		box-shadow: 0px 10px 30px 0px rgba(83, 59, 59, 0.08);
+	  }
+	  .gallery_content:hover{
+		  background-color: blue;
+	  }
+	  .gallery_post .gallery_text_info .gallery_content:before {
+		content: "";
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-image: -moz-linear-gradient(140deg, rgba(73, 49, 230, 0.9) 0%, #7a51ed 100%);
+		background-image: -webkit-linear-gradient(140deg, rgba(73, 49, 230, 0.9) 0%, #7a51ed 100%);
+		background-image: -ms-linear-gradient(140deg, rgba(73, 49, 230, 0.9) 0%, #7a51ed 100%);
+		z-index: -1;
+		opacity: 0;
+		transition: opacity 0.3s linear;
+	  }
+	  .gallery_post:hover img {
+		transform: scale(1.1);
+	  }
+	  .gallery_post:hover .gallery_content:before {
+		opacity: 1;
+	  }
+	  .gallery_post:hover .gallery_content h3, .gallery_post:hover .gallery_content .g_tag {
+		color:#7a51ed;
+	  }
+	  .gallery_content:before {
+		opacity: 1;
+	  }
+	  .gallery_content {
+		padding: 18px 30px;
+		position: relative;
+		z-index: 1;
+	  }
+	  .gallery_content h3 {
+		font-size: 20px;
+		font-weight: 600;
+		color: #000;
+		margin-bottom: 0px;
+		transition: color 0.3s linear;
+	  }
+	  .gallery_content .g_tag {
+		color: #777;
+		font-size: 14px;
+		transition: color 0.3s linear;
+	  }
+	 .gallery_post .gallery_content {
+		padding: 26px 0px 0px;
+	  }
+	  .gallery_post .gallery_content:hover{
+		color:#7a51ed 
+	  }
+	  .gallery_post .gallery_content h3 {
+		color: #101010;
+	  }
+	  /* .gallery_post .gallery_content h3:hover {
+		color: #7a51ed;
+	  } */
+	   /* .gallery_post .gallery_content .g_tag {
+		color: #777;
+	  } */
+	  .gallery_post .gallery_content .g_tag:hover {
+		color: #7a51ed;
+	  }
 
   
   .image {
@@ -239,14 +283,42 @@ h4 {
 	.card .image-wrapper {
 	height: 55%;  
 	}
-   .card .content-wrapper .actions .button {
+	.sunil{
+		width: 100%;
+	}
+   .cards .content-wrapper .actions .button {
 	  width: 100%;
 	  float: none;
 	  margin: 0 0 2% 0;
 	}
   }
   @media (min-width: 1200px){
-	  .card{
+	  .cards{
 		 margin-left: 0px;
 	  }
+  }
+
+  @media (max-width:991px){
+	.gallery_content h3{
+        font-size: 17px;
+    }
+    .gallery_content .g_tag{
+        font-size: 13px;
+    }
+	.gallery_post .gallery_text_info .gallery_content,.gallery_post .gallery_text_info{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+  }
+  @media (max-width:576px){
+	.gallery_post .gallery_text_info .gallery_content, .gallery_post .gallery_text_info{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+  }
+  @media (max-width: 1199px){
+	.gallery_inner_two .gallery_post_two .img img,.gallery_inner_three .gallery_item img,.portfolio_info_slider .portfolio_img img{
+        max-width: 100%;
+    }
+
   }
