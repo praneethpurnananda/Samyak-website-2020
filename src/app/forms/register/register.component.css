@@ -1,13 +1,16 @@
+.body{
+  overflow: hidden;
+}
+
 .main{
   margin-top: 4%;
-  height: auto;
-  overflow: auto;
+
 }
 .personal-container{
   align-items: center;
-  /* width: 1250px; */
   margin-right: 70px;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .personal-container-left{
@@ -24,13 +27,8 @@
 }
 
 .sign-in{
-  /* display: flex; */
   justify-content: space-around;
-  /* align-items: center; */
   flex-wrap: wrap;
-  /* border: 1px;
-  margin-left: 103px;
-  margin-right: 103px; */
 }
 
 .example-full-width-one{
@@ -39,28 +37,66 @@
   margin-left: 19px;
 }
 
+
+.fieldset-s-branch{
+  border: 1px solid #999;
+  border-radius: 8px;
+}
+
 .btn{
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.fieldset-s-branch{
-  border: 1px solid #999;
-  border-radius: 8px;
+legend{
+  color: #000;
+  font-family: 'Roboto', sans-serif;
 }
-@media (max-width: 767px){
-  .example-full-width-one{
-    margin-right: 0;
-    width: 80%;
 
+.example-full-width-one input{
+  width: 50px;
+  color: #000;
+  font-size: 17px;
+  font-family: 'Roboto', sans-serif;
+}
+
+mat-label{
+  font-size: 17px;
+}
+
+.bg{
+  background-size: 500px 300px;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.msg{
+  text-align: center;
+  font-size: 17px;
+  font-family: 'Roboto', sans-serif;
+  color: #c12122;
+}
+
+
+@media (max-width:900px){
+  .main{
+    margin: 0;
+    padding: 0;
   }
+}
+@media (max-width: 786px){
   .personal-container-left{
-    margin-left: 127px;
+margin-left: 52px;
   }
   .professional-container-left{
-    margin-left: 127px;
+    margin-left: 52px;
   }
-
+  .example-full-width-one{
+    margin-right: 100px;
+    width: 55%;
+  }
+  .personal-container{
+    width: 642px; 
+  }
 }
-
