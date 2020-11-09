@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { AdminServiceService } from "../../admin-service.service";
 import { ActivatedRoute , Router } from '@angular/router';
+import {MatSnackBar , MatSnackBarHorizontalPosition , MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-all-events',
@@ -13,7 +14,10 @@ export class AllEventsComponent implements OnInit {
   events;
   myEvents;
   isLoggedIn:boolean = false;
-  constructor(public dialog: MatDialog, private _service: AdminServiceService, private route:ActivatedRoute, private router: Router) { }
+  horizontalPosition: MatSnackBarHorizontalPosition = 'left';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
+  msg;
+  constructor(public dialog: MatDialog, private _service: AdminServiceService, private route:ActivatedRoute, private router: Router,private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     let id1 = this.route.snapshot.params['id1'];
@@ -75,7 +79,11 @@ export class AllEventsComponent implements OnInit {
       this._service.registerEvent(tmp)
       .subscribe(
         data => console.log(data),
-        error => console.log(error)
+        error => {
+          console.log(error);
+          this.msg = error.error.message;
+          this.openSnackBar(this.msg);
+        }
       );
     }
     else{
@@ -95,6 +103,14 @@ export class AllEventsComponent implements OnInit {
         this.ngOnInit();
       }
     });
+ }
+
+ openSnackBar(message: string) {
+   this._snackBar.open(message , 'Close' ,{
+       duration: 5000,
+       horizontalPosition: this.horizontalPosition,
+       verticalPosition: this.verticalPosition,
+   });
  }
 
 

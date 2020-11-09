@@ -8,7 +8,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 //modules
 import { NavbarFooterModule } from "../navbar-footer/navbar-footer.module";
@@ -29,7 +29,8 @@ import { TechTalksComponent } from './tech-talks/tech-talks.component';
     MatIconModule,
     MatCardModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [MoreInfo]
 })
