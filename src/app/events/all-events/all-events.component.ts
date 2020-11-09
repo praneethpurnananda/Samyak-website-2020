@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { AdminServiceService } from "../../admin-service.service";
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute , Router } from '@angular/router';
 
 @Component({
   selector: 'app-all-events',
@@ -12,7 +12,8 @@ export class AllEventsComponent implements OnInit {
 
   events;
   myEvents;
-  constructor(public dialog: MatDialog, private _service: AdminServiceService, private route:ActivatedRoute) { }
+  isLoggedIn:boolean = false;
+  constructor(public dialog: MatDialog, private _service: AdminServiceService, private route:ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     let id1 = this.route.snapshot.params['id1'];
@@ -21,10 +22,42 @@ export class AllEventsComponent implements OnInit {
     console.log(id2)
     this._service.getEvents(id1,id2)
     .subscribe(
-      data => {this.events =  data['events'],console.log(this.events)},
+      data => {
+        this.events =  data['events'],
+        console.log(this.events)
+      },
       error => console.log(error)
     );
 
+    if(localStorage.getItem('client-token')){
+      this._service.checkToken()
+      .subscribe(
+        data => {
+          console.log(data);
+          this.isLoggedIn = Boolean(data);
+          if(this.isLoggedIn)
+            this.myEve();
+        },
+        error => {
+          console.log(error);
+          this.isLoggedIn = false;
+        }
+      );
+    }
+    else{
+      this.isLoggedIn = false;
+    }
+
+  }
+
+  check(item){
+    if(this.isLoggedIn)
+      return !(this.myEvents.find(event => event._id == item._id));
+    else
+      return true
+  }
+
+  myEve(){
     this._service.getMyEvents()
     .subscribe(
       data => {
@@ -33,16 +66,21 @@ export class AllEventsComponent implements OnInit {
       },
       error => console.log(error)
     );
-
-    this._service.checkToken()
-    .subscribe(
-      data => console.log(data),
-      error => console.log(error)
-    );
   }
 
-  check(item){
-    return !(this.myEvents.find(event => event._id == item._id));
+
+  register(item){
+    if(this.isLoggedIn){
+      let tmp = {eventId: item._id};
+      this._service.registerEvent(tmp)
+      .subscribe(
+        data => console.log(data),
+        error => console.log(error)
+      );
+    }
+    else{
+      this.router.navigate(['/login']);
+    }
   }
 
 
@@ -59,19 +97,12 @@ export class AllEventsComponent implements OnInit {
     });
  }
 
- register(item){
-   let tmp = {eventId: item._id};
-   this._service.registerEvent(tmp)
-   .subscribe(
-     data => console.log(data),
-     error => console.log(error)
-   );
- }
+
 
 }
 
 
-//add new role
+
 @Component({
   selector: 'more-info',
   templateUrl: 'more-info.html',

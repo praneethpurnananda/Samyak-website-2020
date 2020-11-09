@@ -11,6 +11,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ValidatingUserComponent implements OnInit {
 
   isLoad:boolean = false;
+  msg = "Processing Your Request";
   constructor(private _service: AdminServiceService , private route: ActivatedRoute , private router: Router,private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
@@ -30,6 +31,7 @@ export class ValidatingUserComponent implements OnInit {
       error => {
         this.isLoad = false;
         console.log(error);
+        this.msg = error.error.message;
         this.openSnackBar('Oops something went wrong...');
         setTimeout(() => {
           this._snackBar.dismiss();

@@ -8,9 +8,19 @@ import { environment } from "../environments/environment";
 })
 export class AdminServiceService {
   backendService = environment.backendService;
+  homeLogo = "../assets/ui-images/home-logo.png";
   blueLogo = '../assets/ui-images/samyak-bluelogo.png';
   chatBotbg = "../assets/ui-images/chatbot-img.svg";
   formImg = "../assets/ui-images/form.svg";
+  phoneNumber = "8977190130";
+  samyakEmail = "samyak@gmail.com";
+  socialMediaLinks = [
+    {title: 'Facebook' , link: 'https://www.facebook.com/kl.samyak/' , icon: 'fab fa-facebook-f'},
+    {title: 'Twitter' , link: 'https://twitter.com/klusamyak?lang=en' , icon: "fab fa-twitter"},
+    {title: 'LinkedIn' , link: 'https://www.linkedin.com/school/samyak-kluniversity/' , icon: "fab fa-linkedin"},
+    {title: 'Instagram' , link: 'https://www.instagram.com/kl_samyak/?hl=en' , icon: "fab fa-instagram"},
+    {title: 'Youtube' , link: 'https://www.youtube.com/channel/UCPrOyzURgK0t6qVVeKWUcaQ' , icon: "fab fa-youtube"}
+  ];
 
   constructor(private _http: HttpClient) { }
 
@@ -105,6 +115,10 @@ export class AdminServiceService {
 
 
   //LOCAL MEDIA
+  getHomeLogo(){
+    return this.homeLogo;
+  }
+
   getBlueLogo(){
     return this.blueLogo;
   }
@@ -115,5 +129,17 @@ export class AdminServiceService {
 
   getFomrbg(){
     return this.formImg;
+  }
+
+  getPhoneNumber(){
+    return this.phoneNumber;
+  }
+
+  getsamyakEmail(){
+    return this.samyakEmail;
+  }
+
+  getSocialMediaLinks(){
+    return this.socialMediaLinks;
   }
 }

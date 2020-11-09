@@ -17,6 +17,9 @@ import { TeamModule } from "./team/team.module";
 import { PaymentModule } from "./payment/payment.module";
 import { MyAccountModule } from "./my-account/my-account.module";
 
+//guards
+import { LoginAuthGuard } from "./login-auth.guard";
+
 @NgModule({
   declarations: [
     AppComponent
@@ -34,7 +37,7 @@ import { MyAccountModule } from "./my-account/my-account.module";
     PaymentModule,
     MyAccountModule
   ],
-  providers: [ {provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [LoginAuthGuard, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

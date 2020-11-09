@@ -39,7 +39,7 @@
 
 		var mobileMenuContent = $('.main-header .nav-outer .main-menu .navigation').html();
 		$('.mobile-menu').append('<div class="close-btn"><span class="icon flaticon-cancel-music"></span></div>');
-		$('.mobile-menu .navigation').append(mobileMenuContent);
+		$('.mobile-menu .navigation').append(mobileMenuContent); //bookmark1
 		$('.sticky-header .navigation').append(mobileMenuContent);
 		$('.mobile-menu .close-btn').on('click', function() {
 			$('body').removeClass('mobile-menu-visible');

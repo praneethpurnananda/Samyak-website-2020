@@ -5,53 +5,58 @@
   <div class="main-box">
     <div class="auto-container clearfix">
       <div class="logo-box">
-        <div class="logo"><a><img src="https://klsamyak.in/images/samyak2.png" alt="" title="" height="50" width="50"></a></div>
+        <div class="logo"><a routerLink="/"><img [src]="logo" alt="" title="" height="230" width="230"></a></div>
       </div>
-
       <!--Nav Box-->
       <div class="nav-outer clearfix">
         <!--Mobile Navigation Toggler-->
         <div class="mobile-nav-toggler"><span class="icon flaticon-menu"></span></div>
         <!-- Main Menu -->
         <nav class="main-menu navbar-expand-md navbar-light">
-          <div class="navbar-header">
-            <!-- Togg le Button -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="icon flaticon-menu-button"></span>
-            </button>
-          </div>
-
-          <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
-            <ul class="navigation clearfix">
-              <li class="dropdown"><a>Home</a></li>
-              <li class="dropdown"><a>About</a></li>
-              <li class="dropdown"><a>Events</a>
-                <ul>
-                  <li class="dropdown"><a>Departmental</a>
-                    <ul>
-                      <li><a>Dept One </a></li>
-                      <li><a>Dept Two </a></li>
-                      <li><a>Dept Three </a></li>
-                    </ul>
-                  </li>
-                  <li><a>Type One</a></li>
-                  <li><a>Type Two</a></li>
+            <div class="navbar-header">
+                <!-- Togg le Button -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon flaticon-menu-button"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
+                <ul class="navigation clearfix">
+                    <li><a>Home</a></li>
+                    <li><a routerLink="/about-samyak">About</a></li>
+                    <li class="dropdown"><a>Events</a>
+                        <ul>
+                            <li class="dropdown" *ngFor="let item of navbarEvents">
+                              <a (click)="toEvent(item.type , 'all')">{{item.type}}</a>
+                                <ul *ngIf="item.departments">
+                                    <li *ngFor="let dep of item.departments"><a (click)="toEvent(item.type , dep)">{{dep}}</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a routerLink="/techtalks">Tech Talks</a></li>
+                    <li><a routerLink="/samyak-team">Team</a></li>
+                    <li><a routerLink="/my-account" *ngIf="isLoggedIn">My Account</a></li>
                 </ul>
-              </li>
-              <li><a>Tech Talks</a></li>
-              <li><a>Team</a></li>
-              <li class="dropdown"><a>My Account</a>
-                <ul>
-                  <li><a>Registered Events</a></li>
-                  <li><a>Certifications</a></li>
-                  <li><a>Reset Password</a></li>
-                  <li><a>Log Out</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
+            </div>
         </nav>
         <!-- Main Menu End-->
+        <div class="outer-box" *ngIf="!isLoading;else spin">
+            <div class="btn-box" routerLink="/login" *ngIf="!isLoggedIn">
+                <a class="theme-btn btn-style-one login" style="color: #fff"><span class="btn-title">Login / Register</span></a>
+            </div>
+
+            <div class="btn-box" *ngIf="isLoggedIn">
+                <a class="theme-btn btn-style-one login" style="color: #fff"><span class="btn-title" (click)="logout()">Logout</span></a>
+            </div>
+
+        </div>
+        <ng-template #spin>
+          <div class="outer-box">
+            <div class="btn-box">
+                <a class="theme-btn btn-style-one login"><span class="btn-title"><mat-spinner class="spinner" color="accent" [diameter]="25"></mat-spinner></span></a>
+            </div>
+          </div>
+        </ng-template>
       </div>
     </div>
   </div>

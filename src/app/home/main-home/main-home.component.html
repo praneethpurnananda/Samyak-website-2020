@@ -7,17 +7,17 @@
                     <!--Top Left-->
                     <div class="top-left clearfix">
                     	<ul class="links clearfix">
-                        	<li><a href="#"><span class="icon fa fa-phone"></span>Call : {{phoneNumber}}</a></li>
-                          <li><a href="#"><span class="icon fa fa-envelope"></span>{{emialId}}</a></li>
+                        	<li><a><span class="icon fa fa-phone"></span>Call : {{phoneNumber}}</a></li>
+                          <li><a><span class="icon fa fa-envelope"></span>{{emailId}}</a></li>
                         </ul>
                     </div>
                     <!--Top Right-->
                     <div class="top-right clearfix">
                     	<ul class="social-icons">
                             <li *ngFor="let item of socialMedia">
-                                  <a>
-                                <span [class]="item.icon"></span>
-                                 </a>
+                                <a (click)="toSocialMedia(item)">
+                                  <span [class]="item.icon"></span>
+                                </a>
                             </li>
                       </ul>
                     </div>
@@ -28,7 +28,7 @@
         <div class="main-box">
             <div class="auto-container clearfix">
                 <div class="logo-box">
-                    <div class="logo"><a><img [src]="samyakLogo" alt="" title="" height="220" width="220"></a></div>
+                    <div class="logo"><a><img [src]="samyakLogo" alt="" title="" height="230" width="230"></a></div>
                 </div>
                 <!--Nav Box-->
                 <div class="nav-outer clearfix">
@@ -58,20 +58,29 @@
                                 </li>
                                 <li><a routerLink="/techtalks">Tech Talks</a></li>
                                 <li><a routerLink="/samyak-team">Team</a></li>
-                                <li><a routerLink="/my-account">My Account</a></li>
+                                <li><a routerLink="/my-account" *ngIf="isLoggedIn">My Account</a></li>
                             </ul>
                         </div>
                     </nav>
                     <!-- Main Menu End-->
                     <!-- Outer box -->
-                    <div class="outer-box">
-                        <div class="btn-box" routerLink="/login" *ngIf="!isLoggedin">
-                            <a class="theme-btn btn-style-one login" style="color: #fff"><span class="btn-title">Register or Login</span></a>
+                    <div class="outer-box" *ngIf="!isLoading;else spin">
+                        <div class="btn-box" routerLink="/login" *ngIf="!isLoggedIn">
+                            <a class="theme-btn btn-style-one login" style="color: #fff"><span class="btn-title">Login / Register</span></a>
                         </div>
-                        <div class="btn-box" *ngIf="isLoggedin">
+
+                        <div class="btn-box" *ngIf="isLoggedIn">
                             <a class="theme-btn btn-style-one login" style="color: #fff"><span class="btn-title" (click)="logout()">Logout</span></a>
                         </div>
+
                     </div>
+                    <ng-template #spin>
+                      <div class="outer-box">
+                        <div class="btn-box">
+                            <a class="theme-btn btn-style-one login"><span class="btn-title"><mat-spinner class="spinner" color="accent" [diameter]="25"></mat-spinner></span></a>
+                        </div>
+                      </div>
+                    </ng-template>
                 </div>
             </div>
         </div>
@@ -79,11 +88,14 @@
         <!-- Mobile Menu  -->
         <div class="mobile-menu">
             <div class="menu-backdrop"></div>
-            <div class="close-btn"><span class="icon flaticon-cancel-1"></span></div>
+
             <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
             <nav class="menu-box">
                 <div class="nav-logo"><a href="index.html"><img [src]="samyakLogo" alt="" title=""></a></div>
-                <ul class="navigation clearfix"><!--Keep This Empty / Menu will come through Javascript--></ul>
+                <ul class="navigation clearfix">
+                  <!--Keep This Empty / Menu will come through Javascript-->
+
+                </ul>
             </nav>
         </div><!-- End Mobile Menu -->
     </header>
@@ -97,7 +109,7 @@
                   <div class="auto-container">
                       <div class="landing-text">
                           <h4 class="title" style="color: #faac1D;">January 20, 2020</h4>
-                          <h2> {{title}} <br>Conference 2020</h2>
+                          <h2> World Digital <br>Conference 2020</h2>
                           <ul class="info-list">
                               <li><span class="icon fa fa-chair"></span> 5000 Seats</li>
                               <li><span class="icon fa fa-user-alt"></span> 12 SPEAKERS</li>

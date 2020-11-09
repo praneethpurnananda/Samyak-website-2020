@@ -6,6 +6,8 @@ import { AppRoutingModule } from '../app-routing.module';
 //components
 import { AccountComponent } from './account/account.component';
 
+//modules
+import { NavbarFooterModule } from "../navbar-footer/navbar-footer.module";
 
 
 @NgModule({
@@ -13,7 +15,8 @@ import { AccountComponent } from './account/account.component';
   imports: [
     CommonModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NavbarFooterModule
   ]
 })
 export class MyAccountModule { }

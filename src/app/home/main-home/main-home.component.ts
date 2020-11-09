@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminServiceService } from "../../admin-service.service";
 import { Router } from '@angular/router';
+import {MatSnackBar , MatSnackBarHorizontalPosition , MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-main-home',
@@ -9,53 +10,70 @@ import { Router } from '@angular/router';
 })
 export class MainHomeComponent implements OnInit {
 
-  title = "World Digital";
-  isLoggedin = false;
-  phoneNumber:string = "1-000-000-0000";
-  emialId:string = "samya@kluniversity.in";
-  socialMedia = [
-    {title: "Facebook" , link: "" , icon: 'fab fa-facebook-f'},
-    {title: "Twitter" , link: "" , icon: "fab fa-twitter"},
-    {title: "Youtube" , link: "" , icon: "fab fa-youtube"},
-    {title: "Instagram" , link: "" , icon: "fab fa-instagram"}
-  ];
-  samyakLogo = "..../../assets/images/nav-logo.png";
+  isLoading = true;
+  isLoggedIn:boolean = false;
+  phoneNumber
+  emailId;
+  socialMedia;
+  samyakLogo;
   navbarEvents;
-  constructor(private _service: AdminServiceService,private router: Router) { }
+  horizontalPosition: MatSnackBarHorizontalPosition = 'left';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
+  constructor(private _service: AdminServiceService,private router: Router,private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    if(localStorage.getItem('token'))
-      this.isLoggedin =  true;
-    else
-      this.isLoggedin = false;
-
       this._service.getNavbarEventData()
       .subscribe(
         data => {this.navbarEvents = data['events'],console.log(this.navbarEvents)},
         error => console.log(error)
       );
 
-      setTimeout(() => {
-        this.title = "Hello World";
-        setTimeout(() => {
-          this.title = "Welcome Samyak"
-        }, 5000);
-      }, 5000);
+      this.phoneNumber = this._service.getPhoneNumber();
+      this.emailId = this._service.getsamyakEmail();
+      this.socialMedia = this._service.getSocialMediaLinks();
+      this.samyakLogo = this._service.getHomeLogo();
+
+      if(localStorage.getItem('client-token')){
+        this._service.checkToken()
+        .subscribe(
+          data => {
+            console.log(data);
+            this.isLoggedIn = Boolean(data);
+            this.isLoading = false;
+          },
+          error => {
+            console.log(error);
+            this.isLoggedIn = false;
+            this.isLoading = false;
+          }
+        );
+      }
+      else{
+        this.isLoggedIn = false;
+        this.isLoading = false;
+      }
+  }
+
+  openSnackBar(message: string) {
+    this._snackBar.open(message , 'Close' ,{
+        duration: 5000,
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+    });
   }
 
   logout(){
-    localStorage.removeItem('token');
-    this.isLoggedin = false;
+    localStorage.removeItem('client-token');
+    this.ngOnInit();
+    this.openSnackBar('Successfully LoggedOut...');
   }
 
   toEvent(eventType , department){
-    // console.log(eventType);
-    // console.log(department);
     this.router.navigate(['events/'+eventType+'/'+department]);
   }
 
-  toBranchEvent(item){
-
+  toSocialMedia(item){
+    window.open(item.link , "__blank");
   }
 
 }

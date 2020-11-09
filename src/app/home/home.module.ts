@@ -11,7 +11,8 @@ import { SamyakThemeComponent } from './samyak-theme/samyak-theme.component';
 import { SamyakSponsorsComponent } from './samyak-sponsors/samyak-sponsors.component';
 import { SamyakContactComponent } from './samyak-contact/samyak-contact.component';
 
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [MainHomeComponent, AboutComponent, SamyakThemeComponent, SamyakSponsorsComponent, SamyakContactComponent],
@@ -19,7 +20,9 @@ import { SamyakContactComponent } from './samyak-contact/samyak-contact.componen
     CommonModule,
     BrowserModule,
     AppRoutingModule,
-    NavbarFooterModule
+    NavbarFooterModule,
+    MatProgressSpinnerModule,
+    MatSnackBarModule
   ]
 })
 export class HomeModule { }

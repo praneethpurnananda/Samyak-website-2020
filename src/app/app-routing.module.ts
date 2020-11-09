@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LoginAuthGuard } from "./login-auth.guard";
 
 import { MainHomeComponent } from "./home/main-home/main-home.component";
 import { LoginComponent } from "./forms/login/login.component";
@@ -24,7 +25,7 @@ const routes: Routes = [
   {path: 'events/:id1/:id2' , component: AllEventsComponent},
   {path: 'verify-email/:token' , component: VerifyEmailComponent},
   {path: 'reset-password/:token' , component: ResetPasswordComponent},
-  {path: 'validate-user' , component: ValidatingUserComponent},
+  {path: 'validate-user' , component: ValidatingUserComponent , canActivate: [LoginAuthGuard]},
   {path: 'payment-verification' , component: PostPaymentComponent},
   {path: 'samyak-team' , component: MainTeamComponent},
   {path: 'techtalks' , component: TechTalksComponent},
