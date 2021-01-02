@@ -10,7 +10,7 @@ import { ActivatedRoute , Router} from '@angular/router';
 export class PostPaymentComponent implements OnInit {
 
   status = "Validating ... ";
-  msg;
+  msg = false;
   constructor(private _service: AdminServiceService , private route: ActivatedRoute , private router: Router) { }
 
   ngOnInit(): void {
@@ -25,11 +25,13 @@ export class PostPaymentComponent implements OnInit {
       error => console.log(error)
     );
 
-    if(payment_status == "Credit")
+    if(payment_status == "Credit"){
       this.status = "Payment Successfull";
+      this.msg = true
+    }
     else{
       this.status = "Payment Failed"
-      this.msg = "Go back to home page"
+      this.msg = true
     }
   }
 
