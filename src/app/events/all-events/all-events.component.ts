@@ -78,7 +78,10 @@ export class AllEventsComponent implements OnInit {
       let tmp = {eventId: item._id};
       this._service.registerEvent(tmp)
       .subscribe(
-        data => console.log(data),
+        data => {
+          console.log(data);
+          this.ngOnInit();
+        },
         error => {
           console.log(error);
           this.msg = error.error.message;

@@ -24,7 +24,10 @@ export class MainHomeComponent implements OnInit {
   ngOnInit(): void {
       this._service.getNavbarEventData()
       .subscribe(
-        data => {this.navbarEvents = data['events'],console.log(this.navbarEvents)},
+        data => {
+          this.navbarEvents = data['events'],
+          console.log(this.navbarEvents)
+        },
         error => console.log(error)
       );
 

@@ -13,7 +13,7 @@
                 <div class="form-column col-lg-6 col-md-12">
                     <!--Newsletter Form-->
                     <div class="newsletter-form" style="float: right;margin-top: 2%;">
-                                <button type="submit" class="theme-btn btn-style-three"><span class="btn-title">Subscribe</span></button>
+                                <button type="submit" class="theme-btn btn-style-three" routerLink="/validate-user" style="cursor: pointer;"><span class="btn-title">Register now</span></button>
                     </div>
                 </div>
 
@@ -28,20 +28,21 @@
     <div class="auto-container">
         <!-- Footer Content -->
         <div class="footer-content">
-            <div class="footer-logo"><a href="#"><img src="images/logo.png" alt=""></a></div>
+            <div class="footer-logo"><a routerLink="/"><img src="images/logo.png" alt=""></a></div>
             <ul class="footer-nav">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a routerLink="/">Home</a></li>
+                <li><a routerLink="/about-samyak">About Us</a></li>
+                <li><a routerLink="/techtalks">Tech Talks</a></li>
+                <li><a routerLink="/samyak-team">Team</a></li>
+                <!-- <li><a routerLink="/">Contact Us</a></li> -->
             </ul>
-            <div class="copyright-text">© Copyright 2019 All Rights Reserved by <a href="index.html">Expert-Themes</a></div>
+            <div class="copyright-text">© Copyright 2019 All Rights Reserved by Samyak KLEF</div>
             <ul class="social-icon-one">
-                <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-                <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                <li><a href="#"><span class="fab fa-pinterest"></span></a></li>
-                <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
+                <li *ngFor="let item of socialMedia">
+                    <a (click)="toSocialMedia(item)">
+                        <span [class]="item.icon"></span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

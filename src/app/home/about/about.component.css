@@ -1,0 +1,7 @@
+.btn-title{
+    color: white;
+    font-weight: lighter;
+}
+.btn-title:hover{
+    color: black;
+}

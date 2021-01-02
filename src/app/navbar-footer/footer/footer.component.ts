@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminServiceService } from "../../admin-service.service";
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  socialMedia;
+  constructor(private _service: AdminServiceService) { }
 
   ngOnInit(): void {
+    this.socialMedia = this._service.getSocialMediaLinks();
+  }
+
+  toSocialMedia(item){
+    window.open(item.link , "__blank");
   }
 
 }

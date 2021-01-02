@@ -44,14 +44,14 @@
                         </div>
                         <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
                             <ul class="navigation clearfix">
-                                <li><a>Home</a></li>
+                                <li><a routerLink="/">Home</a></li>
                                 <li><a routerLink="/about-samyak">About</a></li>
                                 <li class="dropdown"><a>Events</a>
                                     <ul>
                                         <li class="dropdown" *ngFor="let item of navbarEvents">
                                           <a (click)="toEvent(item.type , 'all')">{{item.type}}</a>
                                             <ul *ngIf="item.departments">
-                                                <li *ngFor="let dep of item.departments"><a (click)="toEvent(item.type , dep)">{{dep}}</a></li>
+                                                <li *ngFor="let dep of item.departments"><a (click)="toEvent(item.type , dep.name)">{{dep.name}}</a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -109,7 +109,7 @@
                   <div class="auto-container">
                       <div class="landing-text">
                           <h4 class="title" style="color: #faac1D;">January 20, 2020</h4>
-                          <h2> World Digital <br>Conference 2020</h2>
+                          <h2> Samyak 2020</h2>
                           <ul class="info-list">
                               <li><span class="icon fa fa-chair"></span> 5000 Seats</li>
                               <li><span class="icon fa fa-user-alt"></span> 12 SPEAKERS</li>

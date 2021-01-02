@@ -6,86 +6,24 @@
         </div>
         <div class="auto-container">
             <div class="sec-title">
-                <span class="title">Clients</span>
+                <span class="title">Samyak 2020</span>
                 <h2>Offcial Sponsors</h2>
             </div>
 
             <div class="sponsors-outer">
-                <h3>Platinum Sponsors</h3>
+                <!-- <h3>Platinum Sponsors</h3> -->
                 <div class="row">
                     <!-- Client Block -->
-                    <div class="client-block col-lg-3 col-md-6 col-sm-12">
-                        <figure class="image-box"><a href="#"><img src="https://media.gettyimages.com/photos/track-field-summer-olympics-usa-michael-johnson-in-action-during-mens-picture-id1207050710?k=6&m=1207050710&s=612x612&w=0&h=AohafbTMf4O9K2OVUMpzRIJeRgogSBWpLM_852BCyMA=" alt=""></a></figure>
+
+                    <div class="client-block col-lg-3 col-md-6 col-sm-12" *ngFor="let item of sponsors">
+                        <figure class="image-box" (click)="link(item.link)"><a><img [src]="item.img" alt=""></a></figure>
                     </div>
 
-                    <!-- Client Block -->
-                    <div class="client-block col-lg-3 col-md-6 col-sm-12">
-                        <figure class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a></figure>
-                    </div>
-
-                    <!-- Client Block -->
-                    <div class="client-block col-lg-3 col-md-6 col-sm-12">
-                        <figure class="image-box"><a href="#"><img src="images/clients/3.png" alt=""></a></figure>
-                    </div>
-
-                    <!-- Client Block -->
-                    <div class="client-block col-lg-3 col-md-6 col-sm-12">
-                        <figure class="image-box"><a href="#"><img src="images/clients/4.png" alt=""></a></figure>
-                    </div>
                 </div>
             </div>
 
-            <div class="sponsors-outer">
-                <h3>Gold Sponsors</h3>
+            
 
-                <div class="row">
-                    <!-- Client Block -->
-                    <div class="client-block col-lg-3 col-md-6 col-sm-12">
-                        <figure class="image-box"><a href="#"><img src="images/clients/5.png" alt=""></a></figure>
-                    </div>
-
-                    <!-- Client Block -->
-                    <div class="client-block col-lg-3 col-md-6 col-sm-12">
-                        <figure class="image-box"><a href="#"><img src="images/clients/6.png" alt=""></a></figure>
-                    </div>
-
-                    <!-- Client Block -->
-                    <div class="client-block col-lg-3 col-md-6 col-sm-12">
-                        <figure class="image-box"><a href="#"><img src="images/clients/7.png" alt=""></a></figure>
-                    </div>
-
-                    <!-- Client Block -->
-                    <div class="client-block col-lg-3 col-md-6 col-sm-12">
-                        <figure class="image-box"><a href="#"><img src="images/clients/8.png" alt=""></a></figure>
-                    </div>
-                </div>
-            </div>
-
-            <div class="sponsors-outer">
-                <h3>Silver Sponsors</h3>
-
-                <div class="row">
-                    <!-- Client Block -->
-                    <div class="client-block col-lg-3 col-md-6 col-sm-12">
-                        <figure class="image-box"><a href="#"><img src="images/clients/9.png" alt=""></a></figure>
-                    </div>
-
-                    <!-- Client Block -->
-                    <div class="client-block col-lg-3 col-md-6 col-sm-12">
-                        <figure class="image-box"><a href="#"><img src="images/clients/10.png" alt=""></a></figure>
-                    </div>
-
-                    <!-- Client Block -->
-                    <div class="client-block col-lg-3 col-md-6 col-sm-12">
-                        <figure class="image-box"><a href="#"><img src="images/clients/11.png" alt=""></a></figure>
-                    </div>
-
-                    <!-- Client Block -->
-                    <div class="client-block col-lg-3 col-md-6 col-sm-12">
-                        <figure class="image-box"><a href="#"><img src="images/clients/12.png" alt=""></a></figure>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
     <!--End Clients Section-->
