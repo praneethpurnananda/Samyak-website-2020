@@ -11,6 +11,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ValidatingUserComponent implements OnInit {
 
   isLoad:boolean = false;
+  payment = false;
   msg = "Processing Your Request";
   constructor(private _service: AdminServiceService , private route: ActivatedRoute , private router: Router,private _snackBar: MatSnackBar) { }
 
@@ -27,9 +28,11 @@ export class ValidatingUserComponent implements OnInit {
         window.location.href = longUrl.longurl;
         this._snackBar.dismiss();
         this.isLoad = false;
+        this.payment = false;
       },
       error => {
         this.isLoad = false;
+        this.payment = true;
         console.log(error);
         this.msg = error.error.message;
         this.openSnackBar('Oops something went wrong...');
