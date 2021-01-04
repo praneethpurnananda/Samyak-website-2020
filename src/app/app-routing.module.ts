@@ -29,7 +29,7 @@ const routes: Routes = [
   {path: 'payment-verification' , component: PostPaymentComponent},
   {path: 'samyak-team' , component: MainTeamComponent},
   {path: 'techtalks' , component: TechTalksComponent},
-  {path: 'my-account' , component: AccountComponent}
+  {path: 'my-account' , component: AccountComponent , canActivate: [LoginAuthGuard]}
 ];
 
 @NgModule({

@@ -13,9 +13,11 @@ export class ValidatingUserComponent implements OnInit {
   isLoad:boolean = false;
   payment = false;
   msg = "Processing Your Request";
+  btn = false;
   constructor(private _service: AdminServiceService , private route: ActivatedRoute , private router: Router,private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
+    this.btn = false;
     this.isLoad = true;
     this.openSnackBar('Processing your request....');
     this._service.createRequest()
@@ -29,8 +31,10 @@ export class ValidatingUserComponent implements OnInit {
         this._snackBar.dismiss();
         this.isLoad = false;
         this.payment = false;
+        this.btn = false;
       },
       error => {
+        this.btn = true;
         this.isLoad = false;
         this.payment = true;
         console.log(error);

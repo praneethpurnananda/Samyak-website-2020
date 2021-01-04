@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 
 <!-- News Section -->
-   <section class="news-section">
+   <section class="news-section" *ngIf="!noconent; else second_template">
        <div class="anim-icons">
            <span class="icon icon-circle-blue wow fadeIn"></span>
            <span class="icon twist-line-1 wow zoomIn"></span>
@@ -39,3 +39,12 @@
        </div>
    </section>
    <!--End News Section -->
+   <ng-template #second_template>
+       <br>
+       <br>
+       <div class="second_template">
+           Welcome to your samyak account 
+
+           Your registered events will displayed here ...
+       </div>
+   </ng-template>

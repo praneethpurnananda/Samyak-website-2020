@@ -74,13 +74,16 @@ export class AllEventsComponent implements OnInit {
 
 
   register(item){
+    this.openSnackBar('Processing your request ... ');
     if(this.isLoggedIn){
       let tmp = {eventId: item._id};
       this._service.registerEvent(tmp)
       .subscribe(
         data => {
+          this.openSnackBar('Thanks for registering  -Team Samyak');
           console.log(data);
           this.ngOnInit();
+          this.openDialog('Successfully Registered');
         },
         error => {
           console.log(error);
@@ -94,6 +97,13 @@ export class AllEventsComponent implements OnInit {
     }
   }
 
+  openDialog(item){
+    const dialogRef = this.dialog.open(PostRegistrationEvents, {
+      width: '900px',
+      data: item,
+    });
+    dialogRef.afterClosed().subscribe(result => {});
+  }
 
  moreInfo(item){
    const dialogRef = this.dialog.open(MoreInfo, {
@@ -116,8 +126,6 @@ export class AllEventsComponent implements OnInit {
    });
  }
 
-
-
 }
 
 
@@ -132,4 +140,16 @@ export class MoreInfo {
    public dialogRef: MatDialogRef<MoreInfo>,
    @Inject(MAT_DIALOG_DATA) public data){  console.log(data);}
 
+}
+
+@Component({
+  selector: 'post-registration',
+  templateUrl: 'post-registration-events.html',
+  styleUrls: ['./all-events.component.css']
+})
+export class PostRegistrationEvents{
+  constructor(public dialogRef: MatDialogRef<PostRegistrationEvents>,
+    @Inject(MAT_DIALOG_DATA) public data){
+      console.log(data);
+    }
 }

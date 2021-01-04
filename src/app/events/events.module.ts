@@ -9,18 +9,19 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 //modules
 import { NavbarFooterModule } from "../navbar-footer/navbar-footer.module";
 
 
 //components
-import { AllEventsComponent  , MoreInfo} from './all-events/all-events.component';
+import { AllEventsComponent  , MoreInfo , PostRegistrationEvents } from './all-events/all-events.component';
 import { TechTalksComponent } from './tech-talks/tech-talks.component';
 
 
 @NgModule({
-  declarations: [AllEventsComponent , MoreInfo, TechTalksComponent],
+  declarations: [AllEventsComponent , MoreInfo, TechTalksComponent , PostRegistrationEvents],
   imports: [
     BrowserModule,
     CommonModule,
@@ -30,8 +31,9 @@ import { TechTalksComponent } from './tech-talks/tech-talks.component';
     MatCardModule,
     MatButtonModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatProgressBarModule
   ],
-  providers: [MoreInfo]
+  providers: [MoreInfo , PostRegistrationEvents]
 })
 export class EventsModule { }
