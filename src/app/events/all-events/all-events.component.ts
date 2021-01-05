@@ -93,6 +93,7 @@ export class AllEventsComponent implements OnInit {
       );
     }
     else{
+      this.openSnackBar('Something went wrong .. please try logging in again .. ');
       this.router.navigate(['/login']);
     }
   }
@@ -126,6 +127,29 @@ export class AllEventsComponent implements OnInit {
    });
  }
 
+ viewSlots(item){
+  const dialogRef = this.dialog.open(EventSlots, {
+    width: '400px',
+    data: item,
+  });
+  dialogRef.afterClosed().subscribe(result => {
+    console.log("dialog was closed");
+  });
+ }
+
+}
+
+@Component({
+  selector: 'view-eventSlots',
+  templateUrl: 'view-slots.html',
+  styleUrls: ['./all-events.component.css']
+})
+export class EventSlots {
+  constructor(
+    public dialogRef: MatDialogRef<EventSlots>,
+    @Inject(MAT_DIALOG_DATA) public data){
+      console.log(data)
+    }
 }
 
 

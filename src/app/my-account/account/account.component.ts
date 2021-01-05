@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject} from '@angular/core';
 import { AdminServiceService } from "../../admin-service.service";
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {MatSnackBar , MatSnackBarHorizontalPosition , MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
 
 @Component({
@@ -13,7 +14,7 @@ export class AccountComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = 'left';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   noconent = false;
-  constructor(private _service: AdminServiceService, private _snackBar: MatSnackBar) { }
+  constructor(private _service: AdminServiceService, private _snackBar: MatSnackBar,public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this._service.getMyEvents()
@@ -55,4 +56,28 @@ export class AccountComponent implements OnInit {
     });
   }
 
+  viewSlots(item){
+    const dialogRef = this.dialog.open(EventSlots, {
+      width: '400px',
+      data: item,
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log("dialog was closed");
+    });
+   }
+
+}
+
+
+@Component({
+  selector: 'view-eventSlots',
+  templateUrl: 'view-slots.html',
+  styleUrls: ['././account.component.css']
+})
+export class EventSlots {
+  constructor(
+    public dialogRef: MatDialogRef<EventSlots>,
+    @Inject(MAT_DIALOG_DATA) public data){
+      console.log(data)
+    }
 }

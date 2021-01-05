@@ -1,0 +1,39 @@
+
+<h2 mat-dialog-title>Event Slots for <b>{{data.name}}</b></h2>
+<mat-dialog-content class="mat-typography">
+  <div class="slot-heading">
+      This event (<b>{{data.name}}</b>) is conducted in any one of the below given slots <br> slots will be randomly allocated to registerd users by evnet coordinators
+      <br> Registerd participants can check their allocated slots in 'My Accounts' page
+  </div>
+  <div class="slots">
+    <mat-list *ngIf="data.registered_slots.length; else second_content">
+        <div mat-subheader>Your Slots</div>
+        <mat-list-item *ngFor="let item of data.registered_slots">
+            <div mat-line>{{item.start_time}} to {{item.end_time}}</div>
+            <div mat-line>{{item.date | date:'mediumDate'}}</div>  
+          <mat-icon mat-list-icon>schedule</mat-icon>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </mat-list>
+      <ng-template #second_content>
+          <br>
+          Your Slots : <br>
+          Event coordinator will assing a slot for you , it will take some time , assigned slots will be displayed here
+      </ng-template>
+  </div>
+
+  <div class="slots">
+    <mat-list>
+        <div mat-subheader>All Slots</div>
+        <mat-list-item *ngFor="let item of data.all_slots">
+            <div mat-line>{{item.start_time}} to {{item.end_time}}</div>
+            <div mat-line>{{item.date | date:'mediumDate'}}</div>  
+          <mat-icon mat-list-icon>schedule</mat-icon>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </mat-list>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>
