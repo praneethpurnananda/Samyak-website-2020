@@ -10,6 +10,12 @@
         <mat-form-field class="example-full-width-one" appearance="outline">
           <mat-label>Name</mat-label>
           <input matInput type="text" id="name" formControlName="name">
+          <mat-error *ngIf="registerForm.controls.name.hasError('required')" >
+            this field is required
+          </mat-error>
+          <mat-error *ngIf="!registerForm.controls.name.hasError('required') && registerForm.controls.name.hasError('pattern')">
+            enter valid name
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field class="example-full-width-one" appearance="outline">
@@ -19,11 +25,20 @@
               {{i.viewValue}}
             </mat-option>
           </mat-select>
+          <mat-error>
+            this field is required
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field class="example-full-width-one" appearance="outline">
           <mat-label>Phone Number</mat-label>
           <input matInput type="number" id="number" formControlName="mobile">
+          <mat-error *ngIf="!registerForm.controls.mobile.hasError('required') && registerForm.controls.mobile.hasError('pattern')">
+            enter valid number
+          </mat-error>
+          <mat-error *ngIf="registerForm.controls.mobile.hasError('required') && !registerForm.controls.mobile.hasError('pattern')">
+            this field is required
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field class="example-full-width-one" appearance="outline">
@@ -33,6 +48,9 @@
             <mat-option value="KLH"> KL hyderabad </mat-option>
             <mat-option value="Other College Name">Other</mat-option>
           </mat-select>
+          <mat-error *ngIf=" registerForm.controls.college.hasError('required')">
+            this field is required
+          </mat-error>
         </mat-form-field>
 
         <span *ngIf='field'>
@@ -40,16 +58,25 @@
             <mat-label>College Name</mat-label>
             <input matInput type="text" id="clgname" formControlName="college">
           </mat-form-field>
+          <mat-error *ngIf="registerForm.controls.college.hasError('required')">
+            this field is required
+          </mat-error>
         </span>
 
         <mat-form-field class="example-full-width-one" appearance="outline">
           <mat-label>Current Year</mat-label>
           <input matInput type="number" id="year" formControlName="current_year">
+          <mat-error *ngIf=" registerForm.controls.current_year.hasError('required')">
+            this field is required
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field class="example-full-width-one" appearance="outline">
           <mat-label>College Id</mat-label>
           <input matInput type="text" id="clgid" formControlName="college_id">
+          <mat-error *ngIf=" registerForm.controls.college_id.hasError('required')">
+            this field is required
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field class="example-full-width-one" appearance="outline">
@@ -59,6 +86,9 @@
               {{i.viewValue}}
             </mat-option>
           </mat-select>
+          <mat-error *ngIf=" registerForm.controls.branch.hasError('required')">
+            this field is required
+          </mat-error>
         </mat-form-field>
       </div>
     </div>
@@ -76,6 +106,12 @@
           <mat-label>Email</mat-label>
           <input matInput type="email" id="email" formControlName="email" placeholder="demo@gmail.com">
           <mat-hint>Provide Your Personal Mail</mat-hint>
+          <mat-error *ngIf=" !registerForm.controls.email.hasError('required') && registerForm.controls.email.hasError('email')">
+            enter valid email
+          </mat-error>
+          <mat-error *ngIf=" registerForm.controls.email.hasError('required')">
+            this field is required
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field class="example-full-width-one" appearance="outline">
@@ -84,6 +120,12 @@
           <mat-icon matSuffix (click)="hide1 = !hide1" style="cursor: pointer;color: #092041 !important;">
             {{hide1 ? 'visibility' : 'visibility_off'}}
           </mat-icon>
+          <mat-error *ngIf="!registerForm.controls.password.hasError('required') && registerForm.controls.password.hasError('pattern')">
+            enter valid password
+          </mat-error>
+          <mat-error *ngIf="registerForm.controls.password.hasError('required')">
+             this field is required
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field class="example-full-width-one" appearance="outline">
@@ -92,6 +134,12 @@
           <mat-icon matSuffix (click)="hide2 = !hide2" style="cursor: pointer;color: #092041 !important;">
             {{hide2 ? 'visibility' : 'visibility_off'}}
           </mat-icon>
+          <mat-error *ngIf="!registerForm.controls.confirmPassword.hasError('required')">
+            passwords didn't match 
+          </mat-error>
+          <mat-error *ngIf="registerForm.controls.confirmPassword.hasError('required')">
+             this field is required
+          </mat-error>
         </mat-form-field>
 
       </div>

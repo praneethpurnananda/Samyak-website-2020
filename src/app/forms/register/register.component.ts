@@ -33,15 +33,15 @@ export class RegisterComponent implements OnInit {
   ];
   constructor(private fb: FormBuilder,private _service: AdminServiceService,private router: Router,private _snackBar: MatSnackBar) {
       this.registerForm = this.fb.group({
-        name: ['', Validators.required],
+        name: ['', [Validators.required,Validators.pattern(/^{[a-z A-Z]$/)]],
         email: ['', [Validators.required,Validators.email]],
-        mobile: ['', Validators.required],
+        mobile: ['', [Validators.required,Validators.pattern(/^[0-9]{10,10}$/)]],
         college: ['', Validators.required],
-        current_year: ['', Validators.required],
+        current_year: ['',[ Validators.required,Validators.pattern(/^[0-9]{1,1}$/)]],
         branch: ['', Validators.required],
         college_id: ['', Validators.required],
         gender: ['', Validators.required],
-        password: ['', Validators.required],
+        password: ['', [Validators.required,Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/)]],
         confirmPassword: ['', [passwordValidation , Validators.required]]
       });
       this.registerForm.controls.password.valueChanges
