@@ -31,7 +31,7 @@
                                <li><span class="far fa-user"></span>{{item.speaker}}</li>
                            </ul>
                            <h4><a href="blog-single.html">{{item.title}}</a></h4>
-                           <div class="btn-box"><a class="read-more">Read More</a></div>
+                           <div class="btn-box"><a class="read-more" (click)="readMore(item)">Read More</a></div>
                        </div>
                    </div>
                </div>
@@ -39,3 +39,4 @@
        </div>
    </section>
    <!--End News Section -->
+   <app-footer></app-footer>

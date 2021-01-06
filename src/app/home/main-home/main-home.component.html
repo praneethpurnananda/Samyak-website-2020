@@ -1,6 +1,6 @@
 <div class="page-wrapper">
 
-    <header class="main-header header-style-two alternate-two">
+    <header class="main-header header-style-two alternate-two" id="desktop-nav">
     	<div class="header-top-two">
         	<div class="auto-container">
             	<div class="clearfix">
@@ -57,7 +57,7 @@
                                     </ul>
                                 </li>
                                 <li><a routerLink="/techtalks">Tech Talks</a></li>
-                                <li><a routerLink="/samyak-team">Team</a></li>
+                                <!-- <li><a routerLink="/samyak-team">Team</a></li> -->
                                 <li><a routerLink="/my-account" *ngIf="isLoggedIn">My Account</a></li>
                             </ul>
                         </div>
@@ -85,19 +85,6 @@
             </div>
         </div>
 
-        <!-- Mobile Menu  -->
-        <div class="mobile-menu">
-            <div class="menu-backdrop"></div>
-
-            <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
-            <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img [src]="samyakLogo" alt="" title=""></a></div>
-                <ul class="navigation clearfix">
-                  <!--Keep This Empty / Menu will come through Javascript-->
-
-                </ul>
-            </nav>
-        </div><!-- End Mobile Menu -->
     </header>
     <!--End Main Header -->
 
@@ -108,12 +95,12 @@
               <div class="slide-item" style="background-image: url(../../../assets/images/b2.jpg);">
                   <div class="auto-container">
                       <div class="landing-text">
-                          <h4 class="title" style="color: #faac1D;">January 20, 2020</h4>
-                          <h2> Samyak 2020</h2>
+                          <h4 class="title" style="color: #faac1D;">Feb 12 - 14, 2021</h4>
+                          <h2> Samyak 2021</h2>
                           <ul class="info-list">
-                              <li><span class="icon fa fa-chair"></span> 5000 Seats</li>
-                              <li><span class="icon fa fa-user-alt"></span> 12 SPEAKERS</li>
-                              <li><span class="icon fa fa-map-marker-alt"></span> Palo, California</li>
+                              <!-- <li><span class="icon fa fa-chair"></span> 5000 Seats</li>
+                              <li><span class="icon fa fa-user-alt"></span> 12 SPEAKERS</li> -->
+                              <li><span class="icon fa fa-map-marker-alt"></span> KLEF , Vijayawada</li>
                           </ul>
                           <div class="btn-box"><a class="theme-btn btn-style-two" routerLink="/validate-user"><span class="btn-title">Register</span></a></div>
                       </div>
@@ -126,8 +113,8 @@
       </section>
       <!--End Banner Section -->
     <app-about></app-about>
-    <app-samyak-theme></app-samyak-theme>
-    <app-samyak-sponsors></app-samyak-sponsors>
+    <app-samyak-theme></app-samyak-theme> <br>
+    <!-- <app-samyak-sponsors></app-samyak-sponsors> -->
     <app-samyak-contact></app-samyak-contact>
     <app-footer></app-footer>
 </div>
