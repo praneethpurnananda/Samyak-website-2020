@@ -1,7 +1,7 @@
 <span class="header-span"></span>
 
 <!-- Main Header-->
-<header class="main-header header-style-two">
+<header class="main-header header-style-two" id="desktop-nav">
   <div class="main-box">
     <div class="auto-container clearfix">
       <div class="logo-box">
@@ -12,7 +12,7 @@
         <!--Mobile Navigation Toggler-->
         <div class="mobile-nav-toggler"><span class="icon flaticon-menu"></span></div>
         <!-- Main Menu -->
-        <nav class="main-menu navbar-expand-md navbar-light">
+        <nav class="main-menu navbar-expand-md navbar-light" id="desktop-nav">
             <div class="navbar-header">
                 <!-- Togg le Button -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,7 +40,7 @@
             </div>
         </nav>
         <!-- Main Menu End-->
-        <div class="outer-box" *ngIf="!isLoading;else spin">
+        <div class="outer-box" *ngIf="!isLoading;else spin" id="desktop-nav">
             <div class="btn-box" routerLink="/login" *ngIf="!isLoggedIn">
                 <a class="theme-btn btn-style-one login" style="color: #fff"><span class="btn-title">Login / Register</span></a>
             </div>
@@ -62,3 +62,25 @@
   </div>
 </header>
 <!--End Main Header -->
+
+
+
+<header class="main-header  alternate-two" style="position: fixed;background-color: black;">
+  <div class="logo-box desktop-nav-view nav-img">
+      <div class="logo"><a><img [src]="logo" alt="" title="" height="230" width="230"></a></div>
+  </div>
+
+  <div style="z-index:1;" class="desktop-nav-view">
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <ul class="ul">
+        <li class="li"><a href="#" class="active">Home</a></li>
+        <li class="li"><a href="#">About</a></li>
+        <li class="li"><a href="#">Events</a></li>
+        <li class="li"><a href="#">Gallery</a></li>
+        <li class="li"><a href="#">Contact</a></li>
+      </ul>
+  </div>
+  </header>

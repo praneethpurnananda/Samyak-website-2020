@@ -6,7 +6,7 @@ import {MatSnackBar , MatSnackBarHorizontalPosition , MatSnackBarVerticalPositio
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css' , '../../home/main-home/main-home.component.css']
 })
 export class NavbarComponent implements OnInit {
 

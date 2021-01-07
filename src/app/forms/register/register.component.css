@@ -51,3 +51,27 @@
   border: 1px solid #999;
   border-radius: 8px;
 }
+
+@media (max-width : 952px) {
+  .main{
+    overflow: hidden;
+  }
+  .personal-container{
+    width: 200px;
+    margin-right: 0px;
+  }
+  .personal-container-left{
+    margin-left:  0px;
+  }
+
+  .professional-container-left{
+    margin-left: 0px;
+  }
+  .example-full-width-one{
+    width: 132%;
+  }
+  .link{
+    text-align:start;
+  }
+}
+

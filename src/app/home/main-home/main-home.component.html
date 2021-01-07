@@ -29,13 +29,15 @@
             <div class="auto-container clearfix">
                 <div class="logo-box">
                     <div class="logo"><a><img [src]="samyakLogo" alt="" title="" height="230" width="230"></a></div>
+                    
                 </div>
+                
                 <!--Nav Box-->
                 <div class="nav-outer clearfix">
                     <!--Mobile Navigation Toggler-->
                     <div class="mobile-nav-toggler"><span class="icon flaticon-menu"></span></div>
                     <!-- Main Menu -->
-                    <nav class="main-menu navbar-expand-md navbar-light">
+                    <nav class="main-menu navbar-expand-md navbar-light" id="desktop-nav">
                         <div class="navbar-header">
                             <!-- Togg le Button -->
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,7 +66,7 @@
                     </nav>
                     <!-- Main Menu End-->
                     <!-- Outer box -->
-                    <div class="outer-box" *ngIf="!isLoading;else spin">
+                    <div class="outer-box" *ngIf="!isLoading;else spin" id="desktop-nav">
                         <div class="btn-box" routerLink="/login" *ngIf="!isLoggedIn">
                             <a class="theme-btn btn-style-one login" style="color: #fff"><span class="btn-title">Login / Register</span></a>
                         </div>
@@ -85,36 +87,41 @@
             </div>
         </div>
 
+
+
     </header>
     <!--End Main Header -->
 
-    <div id="mobile-view">
-        <nav>
+
+    <header class="main-header  alternate-two" style="position: fixed;background-color: black;">
+        <div class="logo-box desktop-nav-view nav-img">
+            <div class="logo"><a><img [src]="samyakLogo" alt="" title="" height="230" width="230"></a></div>
+        </div>
+
+        <div style="z-index:1;" class="desktop-nav-view">
             <input type="checkbox" id="check">
             <label for="check" class="checkbtn">
               <i class="fas fa-bars"></i>
             </label>
-            <label class="logo">NAVBAR1</label>
-        
-            <ul>
-              <li><a href="#" class="active">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Events</a></li>
-              <li><a href="#">Gallery</a></li>
-              <li><a href="#">Contact</a></li>
+            <ul class="ul">
+              <li class="li"><a href="#" class="active">Home</a></li>
+              <li class="li"><a href="#">About</a></li>
+              <li class="li"><a href="#">Events</a></li>
+              <li class="li"><a href="#">Gallery</a></li>
+              <li class="li"><a href="#">Contact</a></li>
             </ul>
-          </nav>        
-    </div>
-
+        </div>
+        </header>
     <!-- Banner Section -->
       <section class="banner-section">
+        
           <div class="banner-carousel  owl-theme">
               <!-- Slide Item -->
               <div class="slide-item" style="background-image: url(../../../assets/images/b2.jpg);">
                   <div class="auto-container">
                       <div class="landing-text">
                           <h4 class="title" style="color: #faac1D;">Feb 12 - 14, 2021</h4>
-                          <h2> Samyak 2021</h2>
+                          <h2> Samyak 20 - 21</h2>
                           <ul class="info-list">
                               <!-- <li><span class="icon fa fa-chair"></span> 5000 Seats</li>
                               <li><span class="icon fa fa-user-alt"></span> 12 SPEAKERS</li> -->

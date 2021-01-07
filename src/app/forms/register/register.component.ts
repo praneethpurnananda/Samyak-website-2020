@@ -19,6 +19,7 @@ export class RegisterComponent implements OnInit {
   selectedcollege;
   field=false;
   registerForm: FormGroup;
+  postregister:string = "postregsiter";
   msg;
   gender = [
     {value: 'Male', viewValue: 'Male'},
@@ -35,13 +36,13 @@ export class RegisterComponent implements OnInit {
       this.registerForm = this.fb.group({
         name: ['', Validators.required],
         email: ['', [Validators.required,Validators.email]],
-        mobile: ['', Validators.required],
+        mobile: ['', [Validators.required,Validators.pattern(/^[0-9]{10,10}$/)]],
         college: ['', Validators.required],
-        current_year: ['', Validators.required],
+        current_year: ['',[ Validators.required,Validators.pattern(/^[0-9]{1,1}$/)]],
         branch: ['', Validators.required],
         college_id: ['', Validators.required],
         gender: ['', Validators.required],
-        password: ['', Validators.required],
+        password: ['', [Validators.required,Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/)]],
         confirmPassword: ['', [passwordValidation , Validators.required]]
       });
       this.registerForm.controls.password.valueChanges
@@ -72,7 +73,7 @@ export class RegisterComponent implements OnInit {
     .subscribe(
       data => {
         this.openSnackBar('Almost Done...');
-        this.router.navigate(['/login'])
+        this.router.navigate(['/login' , this.postregister]);
         this.isLoad = false;
         this._snackBar.dismiss();
       },

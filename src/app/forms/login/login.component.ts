@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router , ActivatedRoute  } from '@angular/router';
 import {FormControl, FormBuilder, FormGroup, NgForm, Validators, FormGroupDirective} from '@angular/forms';
 import { AdminServiceService } from "../../admin-service.service";
 import {MatSnackBar} from '@angular/material/snack-bar';
@@ -17,7 +17,8 @@ export class LoginComponent implements OnInit {
   logo;
   bgImg;
   isLoad:boolean = false;
-  constructor(private fb: FormBuilder,private _service: AdminServiceService,private router: Router,private _snackBar: MatSnackBar) {
+  isPostReg:boolean = false;
+  constructor(private fb: FormBuilder,private _service: AdminServiceService,private router: Router,private _snackBar: MatSnackBar,private route:ActivatedRoute) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.email, Validators.required]],
       password: ['', Validators.required]
@@ -25,6 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
+    this.isPostReg = false;
     this.isLoad = true;
     this.openSnackBar('Validating...');
     this._service.login(this.loginForm.value)
@@ -48,9 +50,15 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    let id = this.route.snapshot.params['id'];
     this.isLoad = false;
     this.logo = this._service.getBlueLogo();
     this.bgImg = this._service.getChatBotbg();
+
+    if(id == 'postregsiter')
+      this.isPostReg = true
+    else
+      this.isPostReg = false
   }
 
   openSnackBar(message: string) {

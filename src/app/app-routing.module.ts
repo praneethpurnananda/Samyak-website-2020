@@ -20,6 +20,7 @@ const routes: Routes = [
   {path: '' , component: MainHomeComponent},
   {path: 'about-samyak' , component: MainAboutComponent},
   {path: 'login' , component: LoginComponent},
+  {path: 'login/:id' , component: LoginComponent},
   {path: 'register' , component: RegisterComponent},
   {path: 'forgotpassword' , component: ForgotPasswordComponent},
   {path: 'events/:id1/:id2' , component: AllEventsComponent},
@@ -27,7 +28,7 @@ const routes: Routes = [
   {path: 'reset-password/:token' , component: ResetPasswordComponent},
   {path: 'validate-user' , component: ValidatingUserComponent , canActivate: [LoginAuthGuard]},
   {path: 'payment-verification' , component: PostPaymentComponent},
-  // {path: 'samyak-team' , component: MainTeamComponent},
+  {path: 'samyak-team' , component: MainTeamComponent},
   {path: 'techtalks' , component: TechTalksComponent},
   {path: 'my-account' , component: AccountComponent , canActivate: [LoginAuthGuard]}
 ];
