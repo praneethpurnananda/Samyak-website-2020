@@ -8,7 +8,7 @@ import { environment } from "../environments/environment";
 })
 export class AdminServiceService {
   backendService = environment.backendService;
-  homeLogo = "../assets/ui-images/home-logo.png";
+  homeLogo = "../assets/images/main-logo1.png";
   blueLogo = '../assets/ui-images/samyak-bluelogo.png';
   chatBotbg = "../assets/ui-images/chatbot-img.svg";
   formImg = "../assets/ui-images/form.svg";
