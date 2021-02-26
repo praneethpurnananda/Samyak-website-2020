@@ -18,6 +18,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [MainHomeComponent, AboutComponent, SamyakThemeComponent, SamyakSponsorsComponent, SamyakContactComponent , MobileNav],
@@ -32,7 +33,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatDialogModule,
     MatIconModule,
     MatSelectModule,
-    MatFormFieldModule
-  ]
+    MatFormFieldModule,
+    MatButtonModule
+  ],
+  exports: [MobileNav]
 })
 export class HomeModule { }

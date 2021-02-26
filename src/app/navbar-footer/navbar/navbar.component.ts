@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject} from '@angular/core';
 import { AdminServiceService } from "../../admin-service.service";
 import { Router } from '@angular/router';
 import {MatSnackBar , MatSnackBarHorizontalPosition , MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-navbar',
@@ -16,7 +17,7 @@ export class NavbarComponent implements OnInit {
   isLoggedIn:boolean = false;
   horizontalPosition: MatSnackBarHorizontalPosition = 'left';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
-  constructor(private _service: AdminServiceService,private router: Router,private _snackBar: MatSnackBar) { }
+  constructor(private _service: AdminServiceService,private router: Router,private _snackBar: MatSnackBar,public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this._service.getNavbarEventData()
@@ -67,4 +68,30 @@ export class NavbarComponent implements OnInit {
     });
   }
 
+  listEvents(){
+    const dialogRef = this.dialog.open(SecondNav, {
+      width: '500px',
+      data: this.navbarEvents,
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log("Closed");
+    });
+  }
+
+}
+
+//component
+@Component({
+  selector: 'second-nav',
+  templateUrl: './second-nav.html',
+  styleUrls: ['./navbar.component.css']
+})
+export class SecondNav {
+  constructor(private _service: AdminServiceService,private router: Router, public dialogRef: MatDialogRef<SecondNav> , @Inject(MAT_DIALOG_DATA) public data){}
+  onNoClick(): void { this.dialogRef.close(); }
+
+  toEvent(eventType , department){
+    this.router.navigate(['events/'+eventType+'/'+department]);
+  }
 }

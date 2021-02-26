@@ -107,9 +107,25 @@
             <li class="li"><label for="check" routerLink="/"><a>Home</a></label></li>
             <li class="li"><a routerLink="/about-samyak">About</a></li>
             <li class="li"><a (click)="listEvents()">Events</a></li>
+            <li class="li"><a routerLink="/techtalks">Tech Talks</a></li>
+            <li class="li"><a routerLink="/my-account" *ngIf="isLoggedIn">My Account</a></li>
+
+            <div class="" *ngIf="!isLoading;else spin">
+              <button mat-flat-button color="primary"  routerLink="/login" *ngIf="!isLoggedIn">Login / Register</button>
+
+              <button mat-flat-button color="primary" *ngIf="isLoggedIn" (click)="logout()">Logout</button>
+            </div>
+            <ng-template #spin>
+              <div class="outer-box">
+                <div class="btn-box">
+                    <a class="theme-btn btn-style-one login"><span class="btn-title"><mat-spinner class="spinner" color="accent" [diameter]="25"></mat-spinner></span></a>
+                </div>
+              </div>
+            </ng-template>
           </ul>
 
       </div>
+
 
     </header>
     <!--mobile view-->
