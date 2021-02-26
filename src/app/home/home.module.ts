@@ -15,6 +15,9 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [MainHomeComponent, AboutComponent, SamyakThemeComponent, SamyakSponsorsComponent, SamyakContactComponent , MobileNav],
@@ -26,7 +29,10 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatProgressSpinnerModule,
     MatSnackBarModule,
     MatMenuModule,
-    MatDialogModule
+    MatDialogModule,
+    MatIconModule,
+    MatSelectModule,
+    MatFormFieldModule
   ]
 })
 export class HomeModule { }

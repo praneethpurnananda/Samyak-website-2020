@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>Select one Cateogry</h2>
+<mat-dialog-content class="mat-typography">
+
+  <mat-form-field appearance="fill">
+  <mat-label>Choose an option</mat-label>
+  <mat-select>
+    <div *ngFor="let i of data">
+      <mat-option (click)="toEvent(i.type , 'all')"> {{i.type}} </mat-option>
+    </div>
+  </mat-select>
+</mat-form-field>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>
