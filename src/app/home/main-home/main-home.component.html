@@ -29,9 +29,9 @@
             <div class="auto-container clearfix">
                 <div class="logo-box">
                     <div class="logo"><a><img [src]="samyakLogo" alt="" title="" height="230" width="250"></a></div>
-                    
+
                 </div>
-                
+
                 <!--Nav Box-->
                 <div class="nav-outer clearfix">
                     <!--Mobile Navigation Toggler-->
@@ -90,31 +90,34 @@
 
 
     </header>
+
+    <!--mobile view-->
+    <header class="main-header  alternate-two" style="position: fixed;background-color: black;">
+      <div class="logo-box desktop-nav-view nav-img">
+          <div class="logo"><a><img [src]="samyakLogo" alt="" title="" height="230" width="230"></a></div>
+      </div>
+
+      <div style="z-index:1;" class="desktop-nav-view">
+          <input type="checkbox" id="check">
+          <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+          </label>
+
+          <ul class="ul">
+            <li class="li"><label for="check" routerLink="/"><a>Home</a></label></li>
+            <li class="li"><a routerLink="/about-samyak">About</a></li>
+            <li class="li"><a (click)="listEvents()">Events</a></li>
+          </ul>
+
+      </div>
+
+    </header>
+    <!--mobile view-->
     <!--End Main Header -->
 
-
-    <header class="main-header  alternate-two" style="position: fixed;background-color: black;">
-        <div class="logo-box desktop-nav-view nav-img">
-            <div class="logo"><a><img [src]="samyakLogo" alt="" title="" height="230" width="230"></a></div>
-        </div>
-
-        <div style="z-index:1;" class="desktop-nav-view">
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
-              <i class="fas fa-bars"></i>
-            </label>
-            <ul class="ul">
-              <li class="li"><a routerLink="/" class="active">Home</a></li>
-              <li class="li"><a routerLink="/">About</a></li>
-              <li class="li"><a routerLink="/">Events</a></li>
-              <li class="li"><a routerLink="/">Tech Talks</a></li>
-              <li class="li"><a routerLink="/">Login/Register</a></li>
-            </ul>
-        </div>
-        </header>
     <!-- Banner Section -->
       <section class="banner-section">
-        
+
           <div class="banner-carousel  owl-theme">
               <!-- Slide Item -->
               <div class="slide-item" style="background-image: url(../../../assets/images/b2.jpg);">

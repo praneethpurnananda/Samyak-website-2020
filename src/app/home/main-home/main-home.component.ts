@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AdminServiceService } from "../../admin-service.service";
 import { Router } from '@angular/router';
 import {MatSnackBar , MatSnackBarHorizontalPosition , MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-main-home',
@@ -19,7 +20,7 @@ export class MainHomeComponent implements OnInit {
   navbarEvents;
   horizontalPosition: MatSnackBarHorizontalPosition = 'left';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
-  constructor(private _service: AdminServiceService,private router: Router,private _snackBar: MatSnackBar) { }
+  constructor(private _service: AdminServiceService,private router: Router,private _snackBar: MatSnackBar,public dialog: MatDialog) { }
 
   ngOnInit(): void {
       this._service.getNavbarEventData()
@@ -79,4 +80,18 @@ export class MainHomeComponent implements OnInit {
     window.open(item.link , "__blank");
   }
 
+  listEvents(){
+    const dialogRef = this.dialog.open(MobileNav);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log("Closed");
+    });
+  }
+
 }
+
+@Component({
+  selector: 'mobile-nav',
+  templateUrl: './mobile-nav.html',
+})
+export class MobileNav {}
