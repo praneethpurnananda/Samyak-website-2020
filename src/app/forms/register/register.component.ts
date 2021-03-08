@@ -28,9 +28,34 @@ export class RegisterComponent implements OnInit {
     {value: 'Prefer not to say', viewValue: 'Prefer not to say'}
   ];
   branch = [
-    {value: 'CSE', viewValue: 'Cse'},
-    {value: 'ECE', viewValue: 'Ece'},
-    {value: 'CIVIL', viewValue: 'Civil'}
+    {value: 'AI' , viewValue: 'Artificial Intelligence & Data Science'},
+    {value: 'BT' , viewValue: 'Bio-Technology'},
+    {value: 'CIVIL' , viewValue: 'Civil Engineering'},
+    {value: 'CSE' , viewValue: 'Computer Science & Engineering'},
+    {value: 'IT' , viewValue: 'Computer Science & Information Technology'},
+    {value: 'ECE' , viewValue: 'Electronics & Communication Engineering'},
+    {value: 'ECE' , viewValue: 'Electronics & Computer Engineering'},
+    {value: 'EEE' , viewValue: 'Electrical & Electronics Engineering'},
+    {value: 'ME' , viewValue: 'Mechanical Engineering'},
+    {value: 'PE' , viewValue: 'Petroleum Engineering'},
+    {value: 'ARTS' , viewValue: 'Arts'},
+    {value: 'BES1' , viewValue: 'Basic Engineering Science - 1'},
+    {value: 'BES2' , viewValue: 'Basic Engineering Science - 2'},
+    {value: 'CHEMISTRY' , viewValue: 'Chemistry'},
+    {value: 'ENGLISH' , viewValue: 'English'},
+    {value: 'MATHS' , viewValue: 'Mathematics'},
+    {value: 'PHYSICS' , viewValue: 'Physics'},
+    {value: 'BUSINESS' , viewValue: 'Business School'},
+    {value: 'COMMERCE' , viewValue: 'Commerce'},
+    {value: 'HOTELMANAGEMENT' , viewValue: 'Hotel Management'},
+    {value: 'ARCH' , viewValue: 'Architecture'},
+    {value: 'PHARMACY' , viewValue: 'Pharmacy'},
+    {value: 'MCA' , viewValue: 'Computer Applications'},
+    {value: 'FA' , viewValue: 'Fine Arts'},
+    {value: 'VC' , viewValue: 'Visual Communication'},
+    {value: 'AGRICULTURE' , viewValue: 'Agriculture'},
+    {value: 'LAW' , viewValue: 'Law'},
+    {value: 'BDesign' , viewValue: 'B. Design'}
   ];
   constructor(private fb: FormBuilder,private _service: AdminServiceService,private router: Router,private _snackBar: MatSnackBar) {
       this.registerForm = this.fb.group({

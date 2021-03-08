@@ -80,10 +80,9 @@ export class AllEventsComponent implements OnInit {
 
   toEvent(eventType , department){
     this.router.navigate(['events/'+eventType+'/'+department]);
-    console.log("clicked");
-    console.log(eventType);
-    console.log(department);
-    this.ngOnInit();
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
   }
 
   check(item){

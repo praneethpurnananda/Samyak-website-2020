@@ -59,6 +59,9 @@ export class NavbarComponent implements OnInit {
   toEvent(eventType , department){
     console.log('inside call');
     this.router.navigate(['events/'+eventType+'/'+department]);
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
   }
 
 
@@ -95,5 +98,8 @@ export class SecondNav {
 
   toEvent(eventType , department){
     this.router.navigate(['events/'+eventType+'/'+department]);
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
   }
 }
