@@ -10,11 +10,17 @@
            <span class="icon twist-line-3 wow zoomIn"></span>
        </div>
        <div class="auto-container">
-           <!-- <div class="sec-title text-center">
-               <span class="title">Blogs</span>
-               <h2>Latest News</h2>
-           </div> -->
-
+         <div *ngIf="hasDepartments">
+           <div class="sec-title text-center" *ngIf="navbarEvents.departments">
+               <!-- <span class="title">Blogs</span> -->
+               <mat-form-field appearance="outline">
+                 <mat-label>Choose department</mat-label>
+                 <mat-select>
+                   <mat-option *ngFor="let dep of navbarEvents.departments" (click)="toEvent(department , dep.name)">{{dep.name}}</mat-option>
+                 </mat-select>
+               </mat-form-field>
+            </div>
+           </div>
            <div class="row">
                <!-- News Block Three -->
                <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInRight" *ngFor="let item of events">

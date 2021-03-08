@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { AdminServiceService } from "../../admin-service.service";
-import { ActivatedRoute , Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import {MatSnackBar , MatSnackBarHorizontalPosition , MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
 
 @Component({
@@ -17,13 +17,37 @@ export class AllEventsComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = 'left';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   msg;
+  navbarEvents;
+  hasDepartments = false;
+  department;
   constructor(public dialog: MatDialog, private _service: AdminServiceService, private route:ActivatedRoute, private router: Router,private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    let id1 = this.route.snapshot.params['id1'];
+    this.hasDepartments = false;
+
+    let id1 = this.route.snapshot.paramMap.get('id1');
     console.log(id1);
-    let id2 = this.route.snapshot.params['id2'];
+    let id2 = this.route.snapshot.paramMap.get('id2');
     console.log(id2)
+
+    this._service.getNavbarEventData()
+    .subscribe(
+      data => {
+        this.navbarEvents = data['events'],
+        console.log(this.navbarEvents);
+        if(id2 == 'all'){
+          this.hasDepartments = true;
+          this.navbarEvents = this.navbarEvents.find(x => x.type == id1);
+          console.log(this.navbarEvents);
+          this.department = id1;
+        }
+      },
+      error => {
+        console.log(error);
+        this.hasDepartments = false;
+      }
+    );
+
     this._service.getEvents(id1,id2)
     .subscribe(
       data => {
@@ -52,6 +76,14 @@ export class AllEventsComponent implements OnInit {
       this.isLoggedIn = false;
     }
 
+  }
+
+  toEvent(eventType , department){
+    this.router.navigate(['events/'+eventType+'/'+department]);
+    console.log("clicked");
+    console.log(eventType);
+    console.log(department);
+    this.ngOnInit();
   }
 
   check(item){

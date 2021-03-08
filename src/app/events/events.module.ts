@@ -11,6 +11,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatListModule} from '@angular/material/list';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 //modules
 import { NavbarFooterModule } from "../navbar-footer/navbar-footer.module";
@@ -34,7 +36,9 @@ import { TechTalksComponent } from './tech-talks/tech-talks.component';
     MatDialogModule,
     MatSnackBarModule,
     MatProgressBarModule,
-    MatListModule
+    MatListModule,
+    MatSelectModule,
+    MatFormFieldModule
   ],
   providers: [MoreInfo , PostRegistrationEvents , EventSlots]
 })

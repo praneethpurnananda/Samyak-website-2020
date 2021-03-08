@@ -73,6 +73,7 @@ export class MainHomeComponent implements OnInit {
   }
 
   toEvent(eventType , department){
+    console.log('inside call');
     this.router.navigate(['events/'+eventType+'/'+department]);
   }
 

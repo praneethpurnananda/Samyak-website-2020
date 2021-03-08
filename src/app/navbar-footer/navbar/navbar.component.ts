@@ -57,8 +57,10 @@ export class NavbarComponent implements OnInit {
 
 
   toEvent(eventType , department){
+    console.log('inside call');
     this.router.navigate(['events/'+eventType+'/'+department]);
   }
+
 
   openSnackBar(message: string) {
     this._snackBar.open(message , 'Close' ,{
