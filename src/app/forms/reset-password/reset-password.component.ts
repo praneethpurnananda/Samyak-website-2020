@@ -33,7 +33,7 @@ export class ResetPasswordComponent implements OnInit {
     let tk = {token: token};
     this._service.verifyPasswordToken(tk)
     .subscribe(
-      data => console.log(data),
+      data => console.log('data'),
       error => console.log(error)
     )
 
@@ -41,12 +41,12 @@ export class ResetPasswordComponent implements OnInit {
   }
 
   submit(){
-    console.log('clicked');
+    // console.log('clicked');
     let tmp = {token: this.token , password: this.resetPassword.value.password};
-    console.log(tmp);
+    // console.log(tmp);
     this._service.resetPassword(tmp)
     .subscribe(
-      data => console.log(data),
+      data => console.log('dat'),
       error => console.log(error)
     );
   }

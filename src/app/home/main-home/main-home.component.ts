@@ -26,8 +26,8 @@ export class MainHomeComponent implements OnInit {
       this._service.getNavbarEventData()
       .subscribe(
         data => {
-          this.navbarEvents = data['events'],
-          console.log(this.navbarEvents)
+          this.navbarEvents = data['events']
+          // console.log(this.navbarEvents)
         },
         error => console.log(error)
       );
@@ -41,7 +41,7 @@ export class MainHomeComponent implements OnInit {
         this._service.checkToken()
         .subscribe(
           data => {
-            console.log(data);
+            // console.log(data);
             this.isLoggedIn = Boolean(data);
             this.isLoading = false;
           },
@@ -73,7 +73,7 @@ export class MainHomeComponent implements OnInit {
   }
 
   toEvent(eventType , department){
-    console.log('inside call');
+    // console.log('inside call');
     this.router.navigate(['events/'+eventType+'/'+department]);
   }
 
@@ -88,7 +88,7 @@ export class MainHomeComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log("Closed");
+      // console.log("Closed");
     });
   }
 

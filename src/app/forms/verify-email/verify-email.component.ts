@@ -13,11 +13,11 @@ export class VerifyEmailComponent implements OnInit {
 
   ngOnInit(): void {
     let token = this.route.snapshot.params['token'];
-    console.log(token);
+    // console.log(token);
 
     this._service.verifyEmail(token)
     .subscribe(
-      data => console.log(data),
+      data => console.log('data'),
       error => console.log(error)
     );
   }

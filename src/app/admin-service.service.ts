@@ -81,8 +81,8 @@ export class AdminServiceService {
   }
 
   postPayment(body: any){
-    console.log("called");
-    console.log(localStorage.getItem('client-token'));
+    // console.log("called");
+    // console.log(localStorage.getItem('client-token'));
     return this._http.post(this.backendService+'/payments/add-payment', body,{
         observe: 'body',
         headers: new HttpHeaders().append('x-access-token', localStorage.getItem('client-token'))

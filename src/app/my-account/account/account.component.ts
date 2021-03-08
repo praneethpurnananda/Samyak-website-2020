@@ -20,7 +20,7 @@ export class AccountComponent implements OnInit {
     this._service.getMyEvents()
     .subscribe(
       data => {
-        console.log(data);
+       // console.log(data);
         this.myEvents = data
         if (this.myEvents.length==0)
           this.noconent = true;
@@ -62,7 +62,7 @@ export class AccountComponent implements OnInit {
       data: item,
     });
     dialogRef.afterClosed().subscribe(result => {
-      console.log("dialog was closed");
+      //console.log("dialog was closed");
     });
    }
 
@@ -78,6 +78,6 @@ export class EventSlots {
   constructor(
     public dialogRef: MatDialogRef<EventSlots>,
     @Inject(MAT_DIALOG_DATA) public data){
-      console.log(data)
+     // console.log(data)
     }
 }

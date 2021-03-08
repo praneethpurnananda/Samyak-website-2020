@@ -29,7 +29,7 @@ export class ForgotPasswordComponent implements OnInit {
     this._service.forgotpassword(this.forgotPasswordForm.value)
     .subscribe(
       data =>{
-        console.log(data);
+       // console.log(data);
         this.msg = data;
         this.isLoad = false;
         this.forgotPasswordForm.reset();

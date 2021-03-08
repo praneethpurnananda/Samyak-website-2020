@@ -21,7 +21,7 @@ export class PostPaymentComponent implements OnInit {
     let tmp   = {payment_id: payment_id , payment_status: payment_status , payment_request_id: payment_request_id};
     this._service.postPayment(tmp)
     .subscribe(
-      data => console.log(data),
+      data => console.log('data'),
       error => console.log(error)
     );
 

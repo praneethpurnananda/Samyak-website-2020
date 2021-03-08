@@ -26,19 +26,19 @@ export class AllEventsComponent implements OnInit {
     this.hasDepartments = false;
 
     let id1 = this.route.snapshot.paramMap.get('id1');
-    console.log(id1);
+    // console.log(id1);
     let id2 = this.route.snapshot.paramMap.get('id2');
-    console.log(id2)
+    // console.log(id2)
 
     this._service.getNavbarEventData()
     .subscribe(
       data => {
-        this.navbarEvents = data['events'],
-        console.log(this.navbarEvents);
+        this.navbarEvents = data['events'];
+        // console.log(this.navbarEvents);
         if(id2 == 'all'){
           this.hasDepartments = true;
           this.navbarEvents = this.navbarEvents.find(x => x.type == id1);
-          console.log(this.navbarEvents);
+          // console.log(this.navbarEvents);
           this.department = id1;
         }
       },
@@ -51,8 +51,8 @@ export class AllEventsComponent implements OnInit {
     this._service.getEvents(id1,id2)
     .subscribe(
       data => {
-        this.events =  data['events'],
-        console.log(this.events)
+        this.events =  data['events']
+        // console.log(this.events)
       },
       error => console.log(error)
     );
@@ -61,7 +61,7 @@ export class AllEventsComponent implements OnInit {
       this._service.checkToken()
       .subscribe(
         data => {
-          console.log(data);
+          // console.log(data);
           this.isLoggedIn = Boolean(data);
           if(this.isLoggedIn)
             this.myEve();
@@ -96,7 +96,7 @@ export class AllEventsComponent implements OnInit {
     this._service.getMyEvents()
     .subscribe(
       data => {
-        console.log(data);
+        // console.log(data);
         this.myEvents = data
       },
       error => console.log(error)
@@ -112,7 +112,7 @@ export class AllEventsComponent implements OnInit {
       .subscribe(
         data => {
           this.openSnackBar('Thanks for registering  -Team Samyak');
-          console.log(data);
+          // console.log(data);
           this.ngOnInit();
           this.openDialog('Successfully Registered');
         },
@@ -143,7 +143,7 @@ export class AllEventsComponent implements OnInit {
       data: item,
     });
     dialogRef.afterClosed().subscribe(result => {
-      console.log("dialog was closed");
+      // console.log("dialog was closed");
       if (result) {
         this.ngOnInit();
       }
@@ -164,7 +164,7 @@ export class AllEventsComponent implements OnInit {
     data: item,
   });
   dialogRef.afterClosed().subscribe(result => {
-    console.log("dialog was closed");
+    // console.log("dialog was closed");
   });
  }
 
@@ -179,7 +179,7 @@ export class EventSlots {
   constructor(
     public dialogRef: MatDialogRef<EventSlots>,
     @Inject(MAT_DIALOG_DATA) public data){
-      console.log(data)
+      // console.log(data)
     }
 }
 
@@ -193,7 +193,9 @@ export class EventSlots {
 export class MoreInfo {
   constructor(
    public dialogRef: MatDialogRef<MoreInfo>,
-   @Inject(MAT_DIALOG_DATA) public data){  console.log(data);}
+   @Inject(MAT_DIALOG_DATA) public data){  
+    //  console.log(data);
+    }
 
 }
 
@@ -205,6 +207,6 @@ export class MoreInfo {
 export class PostRegistrationEvents{
   constructor(public dialogRef: MatDialogRef<PostRegistrationEvents>,
     @Inject(MAT_DIALOG_DATA) public data){
-      console.log(data);
+      // console.log(data);
     }
 }
