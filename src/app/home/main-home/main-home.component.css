@@ -47,7 +47,9 @@
   font-size: 18px;
   line-height: 26px;
 }
-
+.logo{
+  padding-top: 3px;
+}
 #mobile-view{
   display: none !important;
 }

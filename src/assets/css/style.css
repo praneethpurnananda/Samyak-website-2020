@@ -167,8 +167,8 @@ p,.text{
 
 .auto-container{
 	position:static;
-	max-width:1200px;
-	padding:0px 15px;
+	max-width:1300px;
+	padding:0px 10px;
 	margin:0 auto;
 }
 
@@ -6569,6 +6569,9 @@ img{
 
 .news-block .image img{
 	display: block;
+	align-items: center;
+	margin: auto;
+	padding: auto;
 	width: 370px;
 	height: 370px;
 }
@@ -10252,6 +10255,22 @@ img{
 .main-header.header-style-two.alternate-two .main-box{
 	position:fixed;
 	width:100%;
+}
+/* .main-header.header-style-two.alternate-two .logo-box .logo2 .img{
+	display: none !important;
+}
+.main-header.header-style-two.alternate-two .logo-box .logo1 .img{
+	display: none !important;
+} */
+
+.main-header.header-style-two.alternate-two.fixed-header .logo0 .img{
+	mask-image: url("../images/kl&klh-white.png");
+}
+.main-header.header-style-two.alternate-two.fixed-header .logo1 .img{
+	mask-image: url("../images/NAAC A++ Logo.jpg");
+}
+.main-header.header-style-two.alternate-two.fixed-header .logo2 .img{
+	mask-image: url("../images/Category 1 Logo.jpg");
 }
 
 /* Banner Section Two */
