@@ -6570,6 +6570,7 @@ img{
 .news-block .image img{
 	display: block;
 	width: 100%;
+	height: 370px;
 }
 
 .news-block .lower-content{
