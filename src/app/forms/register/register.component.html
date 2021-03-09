@@ -42,8 +42,8 @@
         <mat-form-field class="example-full-width-one" appearance="outline">
           <mat-label>College Name</mat-label>
           <mat-select formControlName="college" [(value)]="selectedcollege" (selectionChange)="college()">
-            <mat-option value="KLV"> Kl vijayawada</mat-option>
-            <mat-option value="KLH"> KL hyderabad </mat-option>
+            <mat-option value="KLV"> KL Vijayawada</mat-option>
+            <mat-option value="KLH"> KL Hyderabad </mat-option>
             <mat-option value="Other College Name">Other</mat-option>
           </mat-select>
           <mat-error *ngIf=" registerForm.controls.college.hasError('required')">
@@ -55,19 +55,36 @@
           <mat-form-field class="example-full-width-one" appearance="outline">
             <mat-label>College Name</mat-label>
             <input matInput type="text" id="clgname" formControlName="college">
+            <mat-error *ngIf="registerForm.controls.college.hasError('required')">
+              this field is required
+            </mat-error>
           </mat-form-field>
-          <mat-error *ngIf="registerForm.controls.college.hasError('required')">
-            this field is required
-          </mat-error>
         </span>
 
         <mat-form-field class="example-full-width-one" appearance="outline">
           <mat-label>Current Year of Study</mat-label>
-          <input matInput type="number" id="year" formControlName="current_year">
+          <mat-select formControlName="current_year" [(value)]="selectedyear" (selectionChange)="studyYear()">
+            <mat-option value="1">1</mat-option>
+            <mat-option value="2">2</mat-option>
+            <mat-option value="3">3</mat-option>
+            <mat-option value="4">4</mat-option>
+            <mat-option value="Faculty">Faculty</mat-option>
+            <mat-option value="Other">Other</mat-option>
+          </mat-select>
           <mat-error *ngIf=" registerForm.controls.current_year.hasError('required')">
             this field is required
           </mat-error>
         </mat-form-field>
+
+        <span *ngIf='field2'>
+          <mat-form-field class="example-full-width-one" appearance="outline">
+            <mat-label>current year</mat-label>
+            <input matInput type="text" id="current_year" formControlName="current_year">
+            <mat-error *ngIf="registerForm.controls.current_year.hasError('required')">
+              this field is required
+            </mat-error>
+          </mat-form-field>
+        </span>
 
         <mat-form-field class="example-full-width-one" appearance="outline">
           <mat-label>College Id</mat-label>
@@ -89,14 +106,15 @@
             this field is required
           </mat-error>
         </mat-form-field>
+
         <span *ngIf='field1'>
           <mat-form-field class="example-full-width-one" appearance="outline">
             <mat-label>Branch</mat-label>
             <input matInput type="text" id="branch" formControlName="branch">
+            <mat-error *ngIf="registerForm.controls.branch.hasError('required')">
+              this field is required
+            </mat-error>
           </mat-form-field>
-          <mat-error *ngIf="registerForm.controls.branch.hasError('required')">
-            this field is required
-          </mat-error>
         </span>
       </div>
     </div>

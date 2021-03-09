@@ -18,8 +18,10 @@ export class RegisterComponent implements OnInit {
   formbg;
   selectedcollege;
   selectedbranch;
+  selectedyear;
   field=false;
   field1=false;
+  field2=false;
   registerForm: FormGroup;
   postregister:string = "postregsiter";
   msg;
@@ -65,7 +67,7 @@ export class RegisterComponent implements OnInit {
         email: ['', [Validators.required,Validators.email]],
         mobile: ['', [Validators.required,Validators.pattern(/^[0-9]{10,10}$/)]],
         college: ['', Validators.required],
-        current_year: ['',[ Validators.required,Validators.pattern(/^[0-9]{1,1}$/)]],
+        current_year: ['',[ Validators.required]],
         branch: ['', Validators.required],
         college_id: ['', Validators.required],
         gender: ['', Validators.required],
@@ -101,6 +103,16 @@ export class RegisterComponent implements OnInit {
     }
     else{
       this.field1=false;
+    }
+  }
+
+  studyYear(){
+    if(this.selectedyear==="Other"){
+      this.field2=true;
+      this.registerForm.controls['current_year'].reset();
+    }
+    else{
+      this.field2=false;
     }
   }
   register(){
