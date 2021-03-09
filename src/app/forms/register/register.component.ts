@@ -17,7 +17,9 @@ export class RegisterComponent implements OnInit {
   hide2:boolean = true;
   formbg;
   selectedcollege;
+  selectedbranch;
   field=false;
+  field1=false;
   registerForm: FormGroup;
   postregister:string = "postregsiter";
   msg;
@@ -89,6 +91,16 @@ export class RegisterComponent implements OnInit {
     }
     else{
       this.field=false;
+    }
+  }
+  
+  branches(){
+    if(this.selectedbranch==="Other"){
+      this.field1=true;
+      this.registerForm.controls['branch'].reset();
+    }
+    else{
+      this.field1=false;
     }
   }
   register(){

@@ -79,15 +79,25 @@
 
         <mat-form-field class="example-full-width-one" appearance="outline">
           <mat-label>Branch</mat-label>
-          <mat-select formControlName="branch">
+          <mat-select formControlName="branch" [(value)]="selectedbranch" (selectionChange)="branches()">
             <mat-option *ngFor="let i of branch" [value]="i.value">
               {{i.viewValue}}
             </mat-option>
+            <mat-option value="Other">Other</mat-option>
           </mat-select>
           <mat-error *ngIf=" registerForm.controls.branch.hasError('required')">
             this field is required
           </mat-error>
         </mat-form-field>
+        <span *ngIf='field1'>
+          <mat-form-field class="example-full-width-one" appearance="outline">
+            <mat-label>Branch</mat-label>
+            <input matInput type="text" id="branch" formControlName="branch">
+          </mat-form-field>
+          <mat-error *ngIf="registerForm.controls.branch.hasError('required')">
+            this field is required
+          </mat-error>
+        </span>
       </div>
     </div>
 
