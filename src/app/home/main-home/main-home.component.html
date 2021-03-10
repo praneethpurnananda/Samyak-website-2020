@@ -69,8 +69,8 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a routerLink="/techtalks">Sponsor us</a></li>
-                                <li><a routerLink="/samyak-team">Contact us</a></li>
+                                <li><a routerLink="/sponsors">Sponsors</a></li>
+                                <li><a routerLink="/samyak-team">Contact Us</a></li>
                                 <li><a routerLink="/my-account" *ngIf="isLoggedIn">My Account</a></li>
                             </ul>
                         </div>
@@ -79,7 +79,7 @@
                     <!-- Outer box -->
                     <div class="outer-box" *ngIf="!isLoading;else spin" id="desktop-nav">
                         <div class="btn-box" routerLink="/login" *ngIf="!isLoggedIn">
-                            <a class="theme-btn btn-style-one login" style="color: #fff"><span class="btn-title">Login / Register</span></a>
+                            <a class="theme-btn btn-style-one login" style="color: #fff"><span class="btn-title">Login / Sign up</span></a>
                         </div>
 
                         <div class="btn-box" *ngIf="isLoggedIn">
@@ -120,11 +120,12 @@
             <li class="li"><label for="check" routerLink="/"><a>Home</a></label></li>
             <li class="li"><a routerLink="/about-samyak">About</a></li>
             <li class="li"><a (click)="listEvents()">Events</a></li>
-            <li class="li"><a routerLink="/techtalks">Tech Talks</a></li>
+            <li class="li"><a routerLink="/sponsors">Sponsors</a></li>
+            <li class="li"><a routerLink="/samyak-team">Contact Us</a></li>
             <li class="li"><a routerLink="/my-account" *ngIf="isLoggedIn">My Account</a></li>
 
             <div class="" *ngIf="!isLoading;else spin">
-              <button mat-flat-button color="primary"  routerLink="/login" *ngIf="!isLoggedIn">Login / Register</button>
+              <button mat-flat-button color="primary"  routerLink="/login" *ngIf="!isLoggedIn">Login / Sign Up</button>
 
               <button mat-flat-button color="primary" *ngIf="isLoggedIn" (click)="logout()">Logout</button>
             </div>

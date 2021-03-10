@@ -1,0 +1,7 @@
+.image-box{
+    min-height: 250px;
+    border: none;
+}
+.image-box .img{
+    height: 100%;
+}

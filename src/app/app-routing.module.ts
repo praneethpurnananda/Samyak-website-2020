@@ -29,7 +29,7 @@ const routes: Routes = [
   {path: 'validate-user' , component: ValidatingUserComponent , canActivate: [LoginAuthGuard]},
   {path: 'payment-verification' , component: PostPaymentComponent},
   {path: 'samyak-team' , component: MainTeamComponent},
-  {path: 'techtalks' , component: TechTalksComponent},
+  {path: 'sponsors' , component: TechTalksComponent},
   {path: 'my-account' , component: AccountComponent , canActivate: [LoginAuthGuard]}
 ];
 
