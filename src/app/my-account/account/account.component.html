@@ -1,5 +1,51 @@
 <app-navbar></app-navbar>
+<br>
+<div class="details">
+  <mat-list>
+    <div mat-subheader>Your Details</div>
+    <mat-list-item>
+      <mat-icon mat-list-icon>face</mat-icon>
+      <div mat-line>Name : {{userDetails.user.name}} </div>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-icon mat-list-icon>verified_user</mat-icon>
+      <div mat-line>Samyak Id : {{userDetails.user.samyak_id}}</div>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-icon mat-list-icon>mail</mat-icon>
+      <div mat-line>email : {{userDetails.user.email}} </div>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-icon mat-list-icon>school</mat-icon>
+      <div mat-line>College : {{userDetails.user.college}}</div>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-icon mat-list-icon>tag</mat-icon>
+      <div mat-line>College Id : {{userDetails.user.college_id}}</div>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-icon mat-list-icon>code</mat-icon>
+      <div mat-line>Branch : {{userDetails.user.branch}} </div>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-icon mat-list-icon>today</mat-icon>
+      <div mat-line>Current Year : {{userDetails.user.current_year}}</div>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-icon mat-list-icon>settings_phone</mat-icon>
+      <div mat-line>Mobile : {{userDetails.user.mobile}}</div>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-icon mat-list-icon>payment</mat-icon>
+      <div mat-line *ngIf="userDetails.payment; else notpaid">Pyament status : {{userDetails.payment}}</div>
+      <ng-template #notpaid>
+      <div mat-line>Pyament status : <b>Not Paid</b></div>
+      </ng-template>
+    </mat-list-item>
+  </mat-list>
 
+
+</div>
 <!-- News Section -->
    <section class="news-section" *ngIf="!noconent; else second_template">
        <div class="anim-icons">

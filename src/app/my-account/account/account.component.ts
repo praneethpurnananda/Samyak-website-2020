@@ -10,13 +10,24 @@ import {MatSnackBar , MatSnackBarHorizontalPosition , MatSnackBarVerticalPositio
 })
 export class AccountComponent implements OnInit {
 
+
   myEvents;
   horizontalPosition: MatSnackBarHorizontalPosition = 'left';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   noconent = false;
+  userDetails;
   constructor(private _service: AdminServiceService, private _snackBar: MatSnackBar,public dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this._service.getUserDetails()
+    .subscribe(
+      data => {
+        //console.log(data);
+        this.userDetails = data;
+        //console.log(this.userDetails);
+      },
+      error => console.log(error.error.message)
+    );
     this._service.getMyEvents()
     .subscribe(
       data => {

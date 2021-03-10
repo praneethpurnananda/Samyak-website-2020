@@ -113,6 +113,12 @@ export class AdminServiceService {
     });
   }
 
+  getUserDetails():Observable<object>{
+    return this._http.get(this.backendService+'/users/details', {
+      headers: new HttpHeaders().append('x-access-token', localStorage.getItem('client-token'))
+    });
+  }
+
 
 
 

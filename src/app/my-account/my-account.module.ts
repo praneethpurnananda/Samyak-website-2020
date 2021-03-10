@@ -8,6 +8,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import {MatTableModule} from '@angular/material/table';
 
 //components
 import { AccountComponent , EventSlots} from './account/account.component';
@@ -28,7 +29,8 @@ import { NavbarFooterModule } from "../navbar-footer/navbar-footer.module";
     MatDialogModule,
     MatListModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule
   ],
   providers: [EventSlots]
 })
