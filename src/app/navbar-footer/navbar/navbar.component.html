@@ -6,13 +6,19 @@
     <div class="auto-container clearfix">
       <div class="logo-box">
         <!-- <div class="logo"><a routerLink="/"><img src="../../../assets/images/main-logo2.png" alt="" title="" height="230" width="230"></a></div> -->
-        <div class="logo"><a routerLink="/"><img src="../../../assets/images/kl & klh - black.png" alt="" title="" height="200" width="200"></a></div>
+        <div class="logo"><a routerLink="/"><img src="../../../assets/images/kl&klh-black.png" alt="" title="" height="200" width="200"></a></div>
       </div>
       <div class="logo-box">
         <div class="logo"><a routerLink="/"><img src="../../../assets/images/NAAC A++ Logo.jpg" alt="" title="" height="230" width="60"></a></div>
       </div>
       <div class="logo-box">
         <div class="logo"><a routerLink="/"><img src="../../../assets/images/Category 1 Logo.jpg" alt="" title="" height="230" width="60"></a></div>
+      </div>
+      <div class="logo-box">
+        <div class="logo3"><a routerLink="/"><img src="../../../assets/images/NIRF202041.png" alt="" title="" height="200" width="60"></a></div>
+      </div>
+      <div class="logo-box">
+        <div class="logo4"><a routerLink="/"><img src="../../../assets/images/TOI2Rank.png" alt="" title="" height="200" width="60"></a></div>
       </div>
       <!--Nav Box-->
       <div class="nav-outer clearfix">
@@ -40,7 +46,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li><a routerLink="/techtalks">Tech Talks</a></li>
+                    <!-- <li><a routerLink="/techtalks">Tech Talks</a></li> -->
                     <!-- <li><a routerLink="/samyak-team">Team</a></li> -->
                     <li><a routerLink="/my-account" *ngIf="isLoggedIn">My Account</a></li>
                 </ul>
@@ -49,7 +55,7 @@
         <!-- Main Menu End-->
         <div class="outer-box" *ngIf="!isLoading;else spin" id="desktop-nav">
             <div class="btn-box" routerLink="/login" *ngIf="!isLoggedIn">
-                <a class="theme-btn btn-style-one login" style="color: #fff"><span class="btn-title">Login / Register</span></a>
+                <a class="theme-btn btn-style-one login" style="color: #fff"><span class="btn-title">Login / Sign up</span></a>
             </div>
 
             <div class="btn-box" *ngIf="isLoggedIn">
@@ -75,7 +81,7 @@
 <!--mobile view-->
 <header class="main-header  alternate-two" style="position: fixed;background-color: black;">
   <div class="logo-box desktop-nav-view nav-img">
-      <div class="logo"><a><img [src]="logo" alt="" title="" height="230" width="230"></a></div>
+      <div class="logo"><a><img src="../../../assets/images/kl&klh-white.png" alt="" title="" height="230" width="230"></a></div>
   </div>
 
   <div style="z-index:1;" class="desktop-nav-view">
