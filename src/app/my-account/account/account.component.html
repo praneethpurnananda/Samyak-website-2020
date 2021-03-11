@@ -1,5 +1,8 @@
 <app-navbar></app-navbar>
 <br>
+<marquee onmouseover="this.stop();" onmouseout="this.start();">
+   Incase of any payment failures or technical issues please contact Technical Team - Phone Number : 7095083900
+</marquee>
 <div class="details">
   <mat-list>
     <div mat-subheader>Your Details</div>
@@ -13,7 +16,7 @@
     </mat-list-item>
     <mat-list-item>
       <mat-icon mat-list-icon>mail</mat-icon>
-      <div mat-line>email : {{userDetails.user.email}} </div>
+      <div mat-line>Email : {{userDetails.user.email}} </div>
     </mat-list-item>
     <mat-list-item>
       <mat-icon mat-list-icon>school</mat-icon>
@@ -37,9 +40,9 @@
     </mat-list-item>
     <mat-list-item>
       <mat-icon mat-list-icon>payment</mat-icon>
-      <div mat-line *ngIf="userDetails.payment; else notpaid">Pyament status : {{userDetails.payment}}</div>
+      <div mat-line *ngIf="userDetails.payment; else notpaid">Payment status : Paid</div>
       <ng-template #notpaid>
-      <div mat-line>Pyament status : <b>Not Paid</b></div>
+      <div mat-line>Payment status : <b>Not Paid</b></div>
       </ng-template>
     </mat-list-item>
   </mat-list>

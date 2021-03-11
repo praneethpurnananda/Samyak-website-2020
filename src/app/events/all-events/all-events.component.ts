@@ -120,6 +120,7 @@ export class AllEventsComponent implements OnInit {
           console.log(error);
           this.msg = error.error.message;
           this.openSnackBar(this.msg);
+          //this.openSnackBar("Click on register button in home page for payments")
         }
       );
     }
@@ -193,7 +194,7 @@ export class EventSlots {
 export class MoreInfo {
   constructor(
    public dialogRef: MatDialogRef<MoreInfo>,
-   @Inject(MAT_DIALOG_DATA) public data){  
+   @Inject(MAT_DIALOG_DATA) public data){
     //  console.log(data);
     }
 
