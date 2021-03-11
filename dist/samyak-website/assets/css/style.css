@@ -8277,6 +8277,8 @@ img{
 
 .clients-section-three .sponsors-outer .client-block{
 	position: relative;
+	display: flex;
+	justify-content: space-around;
 }
 
 .clients-section-three .sponsors-outer .image-box{
