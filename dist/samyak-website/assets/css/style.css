@@ -6572,8 +6572,8 @@ img{
 	align-items: center;
 	margin: auto;
 	padding: auto;
-	width: 370px;
-	height: 370px;
+	width: 340px;
+	height: 340px;
 }
 
 .news-block .lower-content{
@@ -8107,8 +8107,8 @@ img{
 
 
 .clients-section .sponsors-outer .image-box img{
-	max-width:50%;
-	width:auto;
+	padding:12px;
+	width:90%;
 	display:inline-block;
 	opacity: 1;
     -webkit-transition:all 300ms ease;

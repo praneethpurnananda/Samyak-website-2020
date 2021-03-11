@@ -55,8 +55,8 @@
 }
 .float{
   position: fixed;
-  width: 100px;
-  height:100px;
+  width: 120px;
+  height:120px;
   bottom: 100px;
   left: 0px;
   z-index: 999;

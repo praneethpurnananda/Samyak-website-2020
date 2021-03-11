@@ -17,12 +17,8 @@ export class TechTalksComponent implements OnInit {
 
   sponsors = [
     {
-      img: 'https://www.kluniversity.in/img/logo9.png',
-      link: 'https://www.kluniversity.in' 
-    },
-    {
-      img: 'https://www.kluniversity.in/img/logo9.png',
-      link: 'https://www.kluniversity.in'
+      img: 'https://dev.apnrts.ap.gov.in/HomeAssets/images/apnrts-logo.png',
+      link: 'https://dev.apnrts.ap.gov.in/home/our_president'
     }
   ];
 
