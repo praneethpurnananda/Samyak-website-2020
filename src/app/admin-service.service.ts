@@ -12,7 +12,7 @@ export class AdminServiceService {
   blueLogo = '../assets/ui-images/samyak-bluelogo.png';
   chatBotbg = "../assets/ui-images/chatbot-img.svg";
   formImg = "../assets/ui-images/form.svg";
-  phoneNumber = "7095083900";
+  phoneNumber = "9848166283";
   samyakEmail = "samyak@kluniversity.in";
   socialMediaLinks = [
     {title: 'Facebook' , link: 'https://www.facebook.com/kl.samyak/' , icon: 'fab fa-facebook-f'},
