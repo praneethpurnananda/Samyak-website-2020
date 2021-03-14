@@ -1,10 +1,10 @@
 <app-navbar></app-navbar>
 <!--Clients Section-->
 <section class="clients-section">
-    <div class="anim-icons">
+    <!-- <div class="anim-icons">
         <span class="icon icon-dots-3 wow zoomIn"></span>
         <span class="icon icon-circle-blue wow zoomIn"></span>
-    </div>
+    </div> -->
     <div class="auto-container">
         <div class="sec-title">
             <span class="title">Samyak 2021</span>
@@ -17,8 +17,33 @@
             <div class="row" style="display: flex; justify-content: space-around;">
                 <!-- Client Block -->
 
-                <div class="client-block col-lg-3 col-md-6 col-sm-12" *ngFor="let item of sponsors">
+                <div class="client-block col-lg-4 col-md-6 col-sm-12" style="margin-left: 3%;" *ngFor="let item of sponsors">
                     <figure class="image-box" (click)="link(item.link)"><a><img [src]="item.img" alt=""></a></figure>
+                </div>
+
+            </div>
+        </div>
+
+        
+
+    </div>
+</section>
+<section class="clients-section">
+    <!-- <div class="anim-icons">
+        <span class="icon icon-dots-3 wow zoomIn"></span>
+        <span class="icon icon-circle-blue wow zoomIn"></span>
+    </div> -->
+    <div class="auto-container">
+        <div class="sec-title">
+            <span class="title">Samyak 2021</span>
+            <h2>Technical Support</h2>
+        </div>
+
+        <div class="sponsors-outer">
+            <div class="row" style="display: flex; justify-content: space-around;">
+                <!-- Client Block -->
+                <div class="client-block " *ngFor="let item of support">
+                    <figure class="" (click)="link(item.link)"><a><img [src]="item.img" alt=""></a></figure>
                 </div>
 
             </div>

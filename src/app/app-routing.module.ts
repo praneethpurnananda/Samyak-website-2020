@@ -28,7 +28,8 @@ const routes: Routes = [
   {path: 'reset-password/:token' , component: ResetPasswordComponent},
   {path: 'validate-user' , component: ValidatingUserComponent , canActivate: [LoginAuthGuard]},
   {path: 'payment-verification' , component: PostPaymentComponent},
-  {path: 'samyak-team' , component: MainTeamComponent},
+  {path: 'judges' , component: MainTeamComponent},
+  // {path: 'samyak-team' , component: MainTeamComponent},
   {path: 'sponsors' , component: TechTalksComponent},
   {path: 'my-account' , component: AccountComponent , canActivate: [LoginAuthGuard]}
 ];
