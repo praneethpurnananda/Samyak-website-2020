@@ -38,7 +38,7 @@ export class RegisterComponent implements OnInit {
     {value: 'CSE' , viewValue: 'Computer Science & Engineering'},
     {value: 'IT' , viewValue: 'Computer Science & Information Technology'},
     {value: 'ECE' , viewValue: 'Electronics & Communication Engineering'},
-    {value: 'ECE' , viewValue: 'Electronics & Computer Engineering'},
+    {value: 'ECM' , viewValue: 'Electronics & Computer Engineering'},
     {value: 'EEE' , viewValue: 'Electrical & Electronics Engineering'},
     {value: 'ME' , viewValue: 'Mechanical Engineering'},
     {value: 'PE' , viewValue: 'Petroleum Engineering'},
