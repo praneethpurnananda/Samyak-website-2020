@@ -21,12 +21,16 @@ export class TechTalksComponent implements OnInit {
       link: 'https://dev.apnrts.ap.gov.in/home/our_president'
     },
     {
-      img: 'https://image1.jdomni.in/storeLogo/02042020/E2/C2/53/0B44DB157E9E0C68F057C2B88D_1585832325526.png?output-format=webp',
-      link: 'https://dev.apnrts.ap.gov.in/home/our_president'
+      img: '../../../assets/images/dltlabs.jpg',
+      link: 'https://www.dltlabs.com/'
     },
     {
       img: 'https://static.wixstatic.com/media/18dea7_5f0a405728cd42e9927496a0cb504071~mv2.png/v1/crop/x_0,y_0,w_432,h_361/fill/w_268,h_223,al_c,q_85,usm_0.66_1.00_0.01/Younify.webp',
-      link: 'https://dev.apnrts.ap.gov.in/home/our_president'
+      link: 'https://www.younify.com/'
+    },
+    {
+      img:'https://www.etutor.co/img/etutor_logo.png',
+      link:'https://www.etutor.co/ '
     }
   ];
 
