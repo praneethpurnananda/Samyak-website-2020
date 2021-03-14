@@ -1,3 +1,7 @@
 .sec-title.light h2, .sec-title.light .title{
     color: black !important;
 }
+.row{
+    display: flex;
+    justify-content: space-around;
+}
