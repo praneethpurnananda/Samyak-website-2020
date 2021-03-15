@@ -49,7 +49,7 @@ export class RegisterComponent implements OnInit {
     {value: 'ENGLISH' , viewValue: 'English'},
     {value: 'MATHS' , viewValue: 'Mathematics'},
     {value: 'PHYSICS' , viewValue: 'Physics'},
-    {value: 'BUSINESS' , viewValue: 'Business School'},
+    // {value: 'BUSINESS' , viewValue: 'Business School'},
     {value: 'COMMERCE' , viewValue: 'Commerce'},
     {value: 'HOTELMANAGEMENT' , viewValue: 'Hotel Management'},
     {value: 'ARCH' , viewValue: 'Architecture'},
