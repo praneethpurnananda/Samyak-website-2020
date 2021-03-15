@@ -14,7 +14,7 @@ export class TechTalksComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  sponsors = [
+  support = [
     {
       img: 'https://dev.apnrts.ap.gov.in/HomeAssets/images/apnrts-logo.png',
       link: 'https://dev.apnrts.ap.gov.in/home/our_president'
@@ -26,14 +26,13 @@ export class TechTalksComponent implements OnInit {
     {
       img: 'https://static.wixstatic.com/media/18dea7_5f0a405728cd42e9927496a0cb504071~mv2.png/v1/crop/x_0,y_0,w_432,h_361/fill/w_268,h_223,al_c,q_85,usm_0.66_1.00_0.01/Younify.webp',
       link: 'https://www.younify.com/'
-    }
-  ];
-  support = [
+    },
     {
       img:'https://www.etutor.co/img/etutor_logo.png',
       link:'https://www.etutor.co/ '
     }
   ];
+
 
   link(item){
     window.open(item , '__blank');

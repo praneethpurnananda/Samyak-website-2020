@@ -13,6 +13,7 @@ import { ResetPasswordComponent } from "./forms/reset-password/reset-password.co
 import { ValidatingUserComponent } from "./payment/validating-user/validating-user.component";
 import { PostPaymentComponent } from "./payment/post-payment/post-payment.component";
 import { MainTeamComponent } from "./team/main-team/main-team.component";
+import { JudgesComponent } from "./team/judges/judges.component";
 import { TechTalksComponent } from "./events/tech-talks/tech-talks.component";
 import { AccountComponent } from "./my-account/account/account.component";
 
@@ -28,8 +29,8 @@ const routes: Routes = [
   {path: 'reset-password/:token' , component: ResetPasswordComponent},
   {path: 'validate-user' , component: ValidatingUserComponent , canActivate: [LoginAuthGuard]},
   {path: 'payment-verification' , component: PostPaymentComponent},
-  {path: 'judges' , component: MainTeamComponent},
-  // {path: 'samyak-team' , component: MainTeamComponent},
+  {path: 'samyak-team' , component: MainTeamComponent},
+  {path: 'judges' , component: JudgesComponent},
   {path: 'sponsors' , component: TechTalksComponent},
   {path: 'my-account' , component: AccountComponent , canActivate: [LoginAuthGuard]}
 ];

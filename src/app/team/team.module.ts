@@ -6,11 +6,11 @@ import { AppRoutingModule } from '../app-routing.module';
 import { NavbarFooterModule } from "../navbar-footer/navbar-footer.module";
 
 import { MainTeamComponent } from './main-team/main-team.component';
-
+import {JudgesComponent} from './judges/judges.component';
 
 
 @NgModule({
-  declarations: [MainTeamComponent],
+  declarations: [MainTeamComponent,JudgesComponent],
   imports: [
     CommonModule,
     AppRoutingModule,
