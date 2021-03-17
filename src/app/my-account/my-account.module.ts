@@ -9,6 +9,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
+import { QRCodeModule } from 'angularx-qrcode';
 
 //components
 import { AccountComponent , EventSlots} from './account/account.component';
@@ -30,7 +31,8 @@ import { NavbarFooterModule } from "../navbar-footer/navbar-footer.module";
     MatListModule,
     MatIconModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    QRCodeModule
   ],
   providers: [EventSlots]
 })

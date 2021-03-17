@@ -5,7 +5,7 @@
 </marquee>
 <br>
 <h3 style="text-align: center">Please fill this form regarding any payment related issues <b> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQLgCCPfYfTAdnjlTW7w7vOiSNuS1JbF9hBUl-lhpBqaynxA/viewform" target="__blank">Click here</a></b> </h3>
-<div class="details">
+<div class="details" style="display: flex; justify-content: space-around;">
   <mat-list>
     <div mat-subheader>Your Details</div>
     <mat-list-item>
@@ -48,7 +48,9 @@
       </ng-template>
     </mat-list-item>
   </mat-list>
-
+<div *ngIf="userDetails.payment">
+  <qrcode [qrdata]="userDetails.user.samyak_id" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+</div>
 
 </div>
 <!-- News Section -->
