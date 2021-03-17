@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from '../app-routing.module';
 import * as $ from "jquery";
 import { NavbarFooterModule } from "../navbar-footer/navbar-footer.module";
+import { NgImageSliderModule } from 'ng-image-slider';
 
 import { MainHomeComponent , MobileNav } from './main-home/main-home.component';
 import { AboutComponent } from './about/about.component';
@@ -34,7 +35,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatIconModule,
     MatSelectModule,
     MatFormFieldModule,
-    MatButtonModule
+    MatButtonModule,
+    NgImageSliderModule
   ],
   exports: [MobileNav]
 })

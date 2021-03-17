@@ -1,0 +1,22 @@
+co-1 topics:-
+FUNDAMENTALS OF COMPUTER DESIGN : Review Of Fundamentals Of CPU, Memory, And IO – Trends In Technology, Power, Energy And Cost, Dependability – Performance Evaluation
+
+what is latency?
+what is throughput?
+what is the difference between latency and throughput?
+what is dependability?and types?and various measures for dependability?
+what are the components of computer system with a block diagram?
+List out various types and sizes of operands?for mips AND 8086 processors
+problems related to power concept
+How to derive power and energy?
+what is meant by amdolhs law?
+over all power,energy ,cost,performance evaluation?
+difference between bandwidth and throughput
+In memory and I/O -no problems(Numericals)
+
+co-2:-
+ INSTRUCTION LEVEL PARALLELISM : ILP Concepts – Pipelining Overview – Compiler Techniques For Exposing ILP – Dynamic Branch Prediction – Dynamic Scheduling – Multiple Instruction Issue – Hardware-Based Speculation – Static Scheduling – Multi-Threading – Limitations Of ILP – Case Studies.
+what is pipelining where it is needed in your system?
+Pipelining plays major major role in Instrction level parallelism
+How pipeling is acheived? and also drawbacks
+

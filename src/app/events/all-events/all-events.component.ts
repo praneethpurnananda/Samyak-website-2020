@@ -52,7 +52,7 @@ export class AllEventsComponent implements OnInit {
     .subscribe(
       data => {
         this.events =  data['events']
-        // console.log(this.events)
+        console.log(this.events)
       },
       error => console.log(error)
     );

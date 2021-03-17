@@ -12,12 +12,23 @@ export class SamyakSponsorsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  sponsors = [
-    {
-      img: 'https://dev.apnrts.ap.gov.in/HomeAssets/images/apnrts-logo.png',
-      link: 'https://dev.apnrts.ap.gov.in/home/our_president'
-    }
-  ];
+  imageObject: Array<object> = [{
+    video: 'https://youtu.be/6pxRHBw-k8M' // Youtube url
+},
+{
+  video: '../../../assets/images/Regsitration200.png', // MP4 Video url
+},
+{
+  video: '../../../assets/images/Regsitration200.png',
+    posterImage: '../../../assets/images/Regsitration200.png', //Optional: You can use this key if you want to show video poster image in slider
+    title: 'Image title'
+},
+{
+  image: '../../../assets/images/Regsitration200.png',
+    thumbImage: '../../../assets/images/Regsitration200.png',
+    alt: 'Image alt'
+}
+];
 
   link(item){
     window.open(item , '__blank');

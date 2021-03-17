@@ -30,6 +30,10 @@ export class TechTalksComponent implements OnInit {
     {
       img:'https://www.etutor.co/img/etutor_logo.png',
       link:'https://www.etutor.co/ '
+    },
+    {
+      img:'https://vinayare29.github.io/heyjunior-website/img/logo.png',
+      link:'https://vinayare29.github.io/heyjunior-website/index.html'
     }
   ];
 
