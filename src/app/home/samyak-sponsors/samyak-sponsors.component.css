@@ -1,9 +1,13 @@
-.image-box ng-image-slider{
-    width: 100%;
+/* .image-box1{
+   display: none;
 }
 @media only screen and (max-width: 750px){
-    .image-box ng-image-slider{
+    .image-box{
+      display: none;
+    }
+    .image-box1{
         width: 100%;
         height: 400px;
+        display: flex!important;
     }
-}
+} */

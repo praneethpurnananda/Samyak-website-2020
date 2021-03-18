@@ -38,7 +38,7 @@
 </section> -->
 <div class="image-box">
     <!-- <figure class="image wow fadeIn"><img src="../../../assets/images/LEDScreenWebsite.jpg" alt=""></figure>-->
-     <ng-image-slider [images]="imageObject"    [autoSlide]="1"
-     [imageSize]="{width: '100%',height:'100%'}">
+     <ng-image-slider [images]="imageObject"  [infinite]='true'  [animationSpeed]='2'[autoSlide]="{interval: 2, stopOnHover: false}"
+     [imageSize]="sizes">
      </ng-image-slider>
 </div>

@@ -8,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class SamyakSponsorsComponent implements OnInit {
 
   constructor() { }
-
-  ngOnInit(): void {
+  width:number = window.innerWidth;
+  sizes = {width: '100%',height:'80%'}
+  ngOnInit() : void {
+     if(this.width<=760){
+      this.sizes= {width: '100%',height:'400'}
+     }
+     if(this.width<=450){
+      this.sizes= {width: '100%',height:'300'}
+     }
   }
+ 
 
   imageObject: Array<object> = [
 {
