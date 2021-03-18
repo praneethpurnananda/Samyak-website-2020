@@ -22,7 +22,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this._service.getNavbarEventData()
     .subscribe(
-      data => {this.navbarEvents = data['events'],console.log(this.navbarEvents)},
+      data => {this.navbarEvents = data['events']},
       error => console.log(error)
     );
 
@@ -32,7 +32,7 @@ export class NavbarComponent implements OnInit {
       this._service.checkToken()
       .subscribe(
         data => {
-          console.log(data);
+          // console.log(data);
           this.isLoggedIn = Boolean(data);
           this.isLoading = false;
         },
@@ -57,7 +57,7 @@ export class NavbarComponent implements OnInit {
 
 
   toEvent(eventType , department){
-    console.log('inside call');
+    // console.log('inside call');
     this.router.navigate(['events/'+eventType+'/'+department]);
     setTimeout(() => {
       window.location.reload();
@@ -80,7 +80,7 @@ export class NavbarComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log("Closed");
+      // console.log("Closed");
     });
   }
 
