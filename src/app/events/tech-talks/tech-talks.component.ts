@@ -34,6 +34,10 @@ export class TechTalksComponent implements OnInit {
     {
       img:'https://vinayare29.github.io/heyjunior-website/img/logo.png',
       link:'https://vinayare29.github.io/heyjunior-website/index.html'
+    },
+    {
+      img:'https://static.wixstatic.com/media/7596ee_42d89bfe846a4eea8f8b609b83631546.jpg/v1/fill/w_229,h_147,al_c,q_80,usm_0.66_1.00_0.01/7596ee_42d89bfe846a4eea8f8b609b83631546.webp',
+      link:'https://nagklu.wixsite.com/jignasa/'
     }
   ];
 

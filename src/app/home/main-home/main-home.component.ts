@@ -107,3 +107,27 @@ export class MobileNav {
     this.router.navigate(['events/'+eventType+'/'+department]);
   }
 }
+
+// @Component({
+//   selector: 'guidelines',
+//   templateUrl: './guidelines.html',
+//   styleUrls: ['./main-home.component.css']
+// })
+// export interface PeriodicElement {
+//   position: number;
+//   Event:string;
+//   Depatment:string;
+//   Date:Date;
+//   Time:string;
+//   Contact:string;
+//   symbol: string;
+// }
+
+// const ELEMENT_DATA: PeriodicElement[] = [
+//   {{position: 1, Event: 'Hydrogen', weight: 1.0079, symbol: 'H'}}
+// ]
+// export class Guidelines {
+//   constructor(private _service: AdminServiceService,private router: Router,private _snackBar: MatSnackBar, public dialogRef: MatDialogRef<Guidelines> , @Inject(MAT_DIALOG_DATA) public data){}
+//   displayedColumns: string[] = ['position', 'Event', 'Department', 'Date','Time','Contact','Description'];
+//   dataSource = ;
+// }

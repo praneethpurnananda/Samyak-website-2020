@@ -1,17 +1,14 @@
-<div class="page-wrapper">
+<div class="page-wrapper" style="position: absolute;">
     <header class="main-header header-style-two alternate-two" id="desktop-nav">
     	<div class="header-top-two">
         	<div class="auto-container">
             	<div class="clearfix">
-                    <!--Top Left-->
-                    <!-- <marquee behavior="scroll" direction="right" style="color: #fff;">Registration Fee is 200/- for participating in any number of events.</marquee> -->
                     <div class="top-left clearfix">
                     	<ul class="links clearfix">
                         	<li><a href="tel:{{phoneNumber}}"><span class="icon fa fa-phone"></span>Call : +91 {{phoneNumber}}</a></li>
                           <li><a href="mailto:{{emailId}}"><span class="icon fa fa-envelope"></span>{{emailId}}</a></li>
                         </ul>
                     </div>
-                    <!--Top Right-->
                     <div class="top-right clearfix">
                     	<ul class="social-icons">
                             <li *ngFor="let item of socialMedia">
@@ -23,12 +20,13 @@
                     </div>
                 </div>
             </div>
+      </div>
+            </header>
         </div>
 
-        <div class="main-box">
+        <!-- <div class="main-box">
             <div class="auto-container clearfix">
                 <div class="logo-box">
-                    <!-- <div class="logo"><a routerLink="/"><img src="../../../assets/images/main-logo2.png" alt="" title="" height="230" width="230"></a></div> -->
                     <div class="logo"><a routerLink="/"><img src="../../../assets/images/kl&klh-black.png" alt="" title="" height="200" width="200"></a></div>
                   </div>
                   <div class="logo-box">
@@ -43,14 +41,10 @@
                   <div class="logo-box">
                     <div class="logo4"><a routerLink="/"><img src="../../../assets/images/TOI2Rank.png" alt="" title="" height="200" width="50"></a></div>
                   </div>
-                <!--Nav Box-->
                 <div class="nav-outer clearfix">
-                    <!--Mobile Navigation Toggler-->
                     <div class="mobile-nav-toggler"><span class="icon flaticon-menu"></span></div>
-                    <!-- Main Menu -->
                     <nav class="main-menu navbar-expand-md navbar-light" id="desktop-nav">
                         <div class="navbar-header">
-                            <!-- Togg le Button -->
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="icon flaticon-menu-button"></span>
                             </button>
@@ -71,13 +65,10 @@
                                 </li>
                                 <li><a routerLink="/sponsors">Sponsors</a></li>
                                 <li><a routerLink="/judges">Judges</a></li>
-                                <!-- <li><a routerLink="/samyak-team">Team</a></li> -->
                                 <li><a routerLink="/my-account" *ngIf="isLoggedIn">My Account</a></li>
                             </ul>
                         </div>
                     </nav>
-                    <!-- Main Menu End-->
-                    <!-- Outer box -->
                     <div class="outer-box" *ngIf="!isLoading;else spin" id="desktop-nav">
                         <div class="btn-box" routerLink="/login" *ngIf="!isLoggedIn">
                             <a class="theme-btn btn-style-one login" style="color: #fff"><span class="btn-title">Login / Sign up</span></a>
@@ -86,9 +77,6 @@
                         <div class="btn-box" *ngIf="isLoggedIn">
                             <a class="theme-btn btn-style-one login" style="color: #fff"><span class="btn-title" (click)="logout()">Logout</span></a>
                         </div>
-                        <!-- <div class="logo-box">
-                          <div class="logo4"><a><img src="../../../assets/images/Regsitration200.png" alt="" title="" height="200" width="100"></a></div>
-                        </div> -->
                     </div>
                     <ng-template #spin>
                       <div class="outer-box">
@@ -103,10 +91,10 @@
 
 
 
-    </header>
+    </header> -->
 
     <!--mobile view-->
-    <header class="main-header  alternate-two" style="position: fixed;background-color: black;">
+    <!-- <header class="main-header  alternate-two" style="position: fixed;background-color: black;">
       <div class="logo-box desktop-nav-view nav-img">
           <div class="logo"><a><img src="../../../assets/images/main-logo2.png" alt="" title="" height="230" width="230"></a></div>
       </div>
@@ -123,7 +111,6 @@
             <li class="li"><a (click)="listEvents()">Events</a></li>
             <li class="li"><a routerLink="/sponsors">Sponsors</a></li>
             <li class="li"><a routerLink="/judges">Judges</a></li>
-            <!-- <li class="li"><a routerLink="/samyak-team">Team</a></li> -->
             <li class="li"><a routerLink="/my-account" *ngIf="isLoggedIn">My Account</a></li>
 
             <div class="" *ngIf="!isLoading;else spin">
@@ -140,27 +127,26 @@
             </ng-template>
           </ul>
 
-      </div>
+      </div> -->
 
 
-    </header>
+    <!-- </header> -->
     <!--mobile view-->
     <!--End Main Header -->
 
     <!-- Banner Section -->
-      <section class="banner-section">
+      <!-- <section class="banner-section">
 
           <div class="banner-carousel  owl-theme">
-              <!-- Slide Item -->
               <div class="slide-item" style="background-image: url(../../../assets/images/b2.jpg);">
                   <div class="auto-container">
                       <div class="landing-text">
                           <h4 class="title" style="color: #faac1D;margin-left: 3%; font-family: 'Times New Roman', Times, serif;">19<sup>th</sup> & 20<sup>th</sup> MARCH 2021</h4>
                           <h2><img src="../../../assets/images/SAMYAK HOME Logo.png" alt="" height="800" width="800"></h2>
                           <ul class="info-list">
-                              <!-- <li><span class="icon fa fa-chair"></span> 5000 Seats</li>
-                              <li><span class="icon fa fa-user-alt"></span> 12 SPEAKERS</li> -->
-                              <!-- <li><span class="icon fa fa-map-marker-alt"></span> KLEF , Vijayawada</li> -->
+                              <li><span class="icon fa fa-chair"></span> 5000 Seats</li>
+                              <li><span class="icon fa fa-user-alt"></span> 12 SPEAKERS</li>
+                              <li><span class="icon fa fa-map-marker-alt"></span> KLEF , Vijayawada</li>
                           </ul>
                           <div class="btn-box"><a class="theme-btn btn-style-two" routerLink="/validate-user"><span class="btn-title">Click here to register for events</span></a></div>
                           <a routerLink="/validate-user" class="float"><img src="../../../assets/images/Regsitration200.png"  height="100%"></a>
@@ -169,14 +155,12 @@
                   </div>
               </div>
 
-              <!-- Slide Item -->
-
           </div>
-      </section>
+      </section> -->
       <!--End Banner Section -->
-    <!-- <app-samyak-sponsors></app-samyak-sponsors> -->
+      <app-navbar></app-navbar>
+    <app-samyak-sponsors></app-samyak-sponsors>
     <app-about></app-about>
     <app-samyak-theme></app-samyak-theme> <br>
     <app-samyak-contact></app-samyak-contact>
     <app-footer></app-footer>
-</div>

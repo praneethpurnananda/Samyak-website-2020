@@ -12,20 +12,10 @@ export class SamyakSponsorsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  imageObject: Array<object> = [{
-    video: 'https://youtu.be/6pxRHBw-k8M' // Youtube url
-},
+  imageObject: Array<object> = [
 {
-  video: '../../../assets/images/Regsitration200.png', // MP4 Video url
-},
-{
-  video: '../../../assets/images/Regsitration200.png',
-    posterImage: '../../../assets/images/Regsitration200.png', //Optional: You can use this key if you want to show video poster image in slider
-    title: 'Image title'
-},
-{
-  image: '../../../assets/images/Regsitration200.png',
-    thumbImage: '../../../assets/images/Regsitration200.png',
+  image: '../../../assets/images/WebsiteBanner-Saketh.jpg',
+    thumbImage: '../../../assets/images/WebsiteBanner-Saketh.jpg',
     alt: 'Image alt'
 }
 ];
