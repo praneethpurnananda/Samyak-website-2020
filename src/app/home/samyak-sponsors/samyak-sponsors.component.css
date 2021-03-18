@@ -1,0 +1,9 @@
+.image-box ng-image-slider{
+    width: 100%;
+}
+@media only screen and (max-width: 750px){
+    .image-box ng-image-slider{
+        width: 100%;
+        height: 400px;
+    }
+}

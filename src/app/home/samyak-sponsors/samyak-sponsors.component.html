@@ -26,7 +26,19 @@
         </div>
     </section> -->
     <!--End Clients Section-->
-    <section>
-    <ng-image-slider [images]="imageObject"    [autoSlide]="1"
-    [imageSize]="{width: '100%', height:550}"
-    #nav></ng-image-slider></section>
+    <!-- <section class="banner-section">
+    <div class="image-box">
+    <div class="image wow fadeIn">
+        <ng-image-slider [images]="imageObject"    [autoSlide]="1"
+        [imageSize]="{width: '100%',height:'100%'}"#nav>
+        </ng-image-slider>
+    </div>
+    
+        </div>
+</section> -->
+<div class="image-box">
+    <!-- <figure class="image wow fadeIn"><img src="../../../assets/images/LEDScreenWebsite.jpg" alt=""></figure>-->
+     <ng-image-slider [images]="imageObject"    [autoSlide]="1"
+     [imageSize]="{width: '100%',height:'100%'}">
+     </ng-image-slider>
+</div>

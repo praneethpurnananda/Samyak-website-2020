@@ -17,6 +17,16 @@ export class SamyakSponsorsComponent implements OnInit {
   image: '../../../assets/images/WebsiteBanner-Saketh.jpg',
     thumbImage: '../../../assets/images/WebsiteBanner-Saketh.jpg',
     alt: 'Image alt'
+},
+{
+  image: '../../../assets/images/TechnicalPartners.jpg',
+    thumbImage: '../../../assets/images/TechnicalPartners.jpg',
+    alt: 'Image alt'
+},
+{
+  image: '../../../assets/images/MainBanner.jpg',
+    thumbImage: '../../../assets/images/MainBanner.jpg',
+    alt: 'Image alt'
 }
 ];
 
