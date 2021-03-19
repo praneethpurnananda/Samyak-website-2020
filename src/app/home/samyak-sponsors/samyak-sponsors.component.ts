@@ -27,6 +27,11 @@ export class SamyakSponsorsComponent implements OnInit {
     alt: 'Image alt'
 },
 {
+  image: '../../../assets/images/Suhas.jpg',
+    thumbImage: '../../../assets/images/Suhas.jpg',
+    alt: 'Image alt'
+},
+{
   image: '../../../assets/images/TechnicalPartners.jpg',
     thumbImage: '../../../assets/images/TechnicalPartners.jpg',
     alt: 'Image alt'
@@ -34,6 +39,11 @@ export class SamyakSponsorsComponent implements OnInit {
 {
   image: '../../../assets/images/MainBanner.jpg',
     thumbImage: '../../../assets/images/MainBanner.jpg',
+    alt: 'Image alt'
+},
+{
+  image: '../../../assets/images/Sponsors.jpg',
+    thumbImage: '../../../assets/images/Sponsors.jpg',
     alt: 'Image alt'
 }
 ];
