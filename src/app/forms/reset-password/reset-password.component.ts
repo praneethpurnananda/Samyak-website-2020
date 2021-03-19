@@ -17,6 +17,7 @@ export class ResetPasswordComponent implements OnInit {
   token;
   logo;
   msg;
+  err;
   constructor(private fb: FormBuilder,private _service: AdminServiceService,private router: Router,private route: ActivatedRoute) {
     this.resetPassword = this.fb.group({
       password: ['', Validators.required],
@@ -52,7 +53,7 @@ export class ResetPasswordComponent implements OnInit {
         console.log('dat')
       },
       error => {
-        this.msg = error.error.message
+        this.err = error.error.message
       }
     );
   }
